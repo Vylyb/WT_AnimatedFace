@@ -2,16 +2,19 @@ package main.view;
 
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.util.Vector;
 
 import main.AnimatedFace;
 import main.animation.Animation;
+import main.view.sliders.MultiPositionSlider;
 
 
 public class ControlContainer extends Container {
 
 	public Window window;
 
-	public final int	LELFTX=0,	//left eye
+	public final int	
+			LELFTX=0,	//left eye
 			LELFTY=1,
 			LERGTX=2,
 			LERGTY=3,
@@ -29,41 +32,53 @@ public class ControlContainer extends Container {
 			RELOWX=14,
 			RELOWY=15,
 
-			MOLFTX=16,	//mouth
-			MOLFTY=17,
-			MORGTX=18,
-			MORGTY=19,
-			MOUPX=20,
-			MOUPY=21,
-			MOLOWX=22,
-			MOLOWY=23,
+			LBLFTX=16,	//left eye brow
+			LBLFTY=17,
+			LBRGTX=18,
+			LBRGTY=19,
+			LBUPX=20,
+			LBUPY=21,
+			LBLOWX=22,
+			LBLOWY=23,
 
-			LBLFTX=24,	//right eye brow
-			LBLFTY=25,
-			LBRGTX=26,
-			LBRGTY=27,
-			LBUPX=28,
-			LBUPY=29,
+			RBLFTX=24,	//right eye brow
+			RBLFTY=25,
+			RBRGTX=26,
+			RBRGTY=27,
+			RBUPX=28,
+			RBUPY=29,
+			RBLOWX=30,
+			RBLOWY=31,
 
-			RBLFTX=30,	//right eye brow
-			RBLFTY=31,
-			RBRGTX=32,
-			RBRGTY=33,
-			RBUPX=34,
-			RBUPY=35;
+			LLLFTX=32,	//left eye lid
+			LLLFTY=33,
+			LLRGTX=34,
+			LLRGTY=35,
+			LLUPX=36,
+			LLUPY=37,
+		
+			RLLFTX=38,	//right eye lid
+			RLLFTY=39,
+			RLRGTX=40,
+			RLRGTY=41,
+			RLUPX=42,
+			RLUPY=43;
 
 
-	public final static int MAX=100;
+	public final static int MAX=1000;
 
+	/*
+	 * startwerte
+	 */
 	private int[] values=new int[]{
-			28,	//left eye left point x
-			73,	//left eye left point y
-			46,	//left eye right point x
-			66,	//left eye right point y
-			41,	//left eye upper point x
-			77,	//left eye upper point y
-			38,	//left eye lower point x
-			58,	//left eye lower point y
+			23,	//left eye left point x
+			31,	//left eye left point y
+			43,	//left eye right point x
+			31,	//left eye right point y
+			34,	//left eye upper point x
+			38,	//left eye upper point y
+			35,	//left eye lower point x
+			25,	//left eye lower point y
 
 			0,	//right eye left point x
 			0,	//right eye left point y
@@ -74,21 +89,14 @@ public class ControlContainer extends Container {
 			0,	//right eye lower point x
 			0,	//right eye lower point y
 
-			35,	//mouth left point x
-			30,	//mouth left point y
-			65,	//mouth right point x
-			30,	//mouth right point y
-			50,	//mouth upper point x
-			35,	//mouth upper point y
-			50,	//mouth lower point x
-			20,	//mouth lower point y
-
-			25,	//left eye brow left point x
-			80,	//left eye brow left point y
-			45,	//left eye brow right point x
-			70,	//left eye brow right point y
-			45,	//left eye brow upper point x
-			80,	//left eye brow upper point y
+			22,	//left eye brow left point x
+			36,	//left eye brow left point y
+			47,	//left eye brow right point x
+			36,	//left eye brow right point y
+			19,	//left eye brow upper point x
+			47,	//left eye brow upper point y
+			21,	//left eye brow lower point x
+			45,	//left eye brow lower point y
 
 			0,	//right eye left point x
 			0,	//right eye left point y
@@ -96,9 +104,11 @@ public class ControlContainer extends Container {
 			0,	//right eye right point y
 			0,	//right eye upper point x
 			0,	//right eye upper point y
+			0,	//right eye brow lower point x
+			0,	//right eye brow lower point y
 	};
 
-	public PointPositionSlider[] sliders=new PointPositionSlider[values.length];
+	public Vector<MultiPositionSlider> sliders=new Vector<MultiPositionSlider>();
 
 	public ControlContainer(Window window) {
 		this.window=window;
@@ -106,6 +116,10 @@ public class ControlContainer extends Container {
 		AnimatedFace.currentAnimation=new Animation(this);
 
 		setLayout(new GridLayout(0,1,0,-1));
+		
+		for(int i=0;i<values.length;i++){
+			values[i]*=MAX/100;
+		}
 
 		//mirror values of the eyes
 		values[RELFTY]=values[LERGTY];
@@ -114,64 +128,148 @@ public class ControlContainer extends Container {
 		values[REUPY]=values[LEUPY];
 		values[RELOWY]=values[LELOWY];
 
-		values[RELFTX]=100-values[LERGTX];
-		values[RERGTX]=100-values[LELFTX];
+		values[RELFTX]=MAX-values[LERGTX];
+		values[RERGTX]=MAX-values[LELFTX];
 
-		values[REUPX]=100-values[LEUPX];
-		values[RELOWX]=100-values[LELOWX];
+		values[REUPX]=MAX-values[LEUPX];
+		values[RELOWX]=MAX-values[LELOWX];
 
 		//mirror values of the eye brows
 		values[RBLFTY]=values[LBRGTY];
 		values[RBRGTY]=values[LBLFTY];
 
 		values[RBUPY]=values[LBUPY];
+		values[RBLOWY]=values[LBLOWY];
 
-		values[RBLFTX]=100-values[LBRGTX];
-		values[RBRGTX]=100-values[LBLFTX];
+		values[RBLFTX]=MAX-values[LBRGTX];
+		values[RBRGTX]=MAX-values[LBLFTX];
 
-		values[RBUPX]=100-values[LBUPX];
+		values[RBUPX]=MAX-values[LBUPX];
+		values[RBLOWX]=MAX-values[LBLOWX];
 
 
-		add(sliders[LELFTX]=new PointPositionSlider("L. Eye, LP, X",1,MAX,LELFTX,this));
-		add(sliders[LELFTY]=new PointPositionSlider("L. Eye, LP, Y",1,MAX,LELFTY,this));
-		add(sliders[LERGTX]=new PointPositionSlider("L. Eye, RP, X",1,MAX,LERGTX,this));
-		add(sliders[LERGTY]=new PointPositionSlider("L. Eye, RP, Y",1,MAX,LERGTY,this));
-		add(sliders[LEUPX]=new PointPositionSlider("L. Eye, UP, X",1,MAX,LEUPX,this));
-		add(sliders[LEUPY]=new PointPositionSlider("L. Eye, UP, Y",1,MAX,LEUPY,this));
-		add(sliders[LELOWX]=new PointPositionSlider("L. Eye, LP, X",1,MAX,LELOWX,this));
-		add(sliders[LELOWY]=new PointPositionSlider("L. Eye, LP, Y",1,MAX,LELOWY,this));
-
-		add(sliders[RELFTX]=new PointPositionSlider("R. Eye, LP, X",1,MAX,RELFTX,this));
-		add(sliders[RELFTY]=new PointPositionSlider("R. Eye, LP, Y",1,MAX,RELFTY,this));
-		add(sliders[RERGTX]=new PointPositionSlider("R. Eye, RP, X",1,MAX,RERGTX,this));
-		add(sliders[RERGTY]=new PointPositionSlider("R. Eye, RP, Y",1,MAX,RERGTY,this));
-		add(sliders[REUPX]=new PointPositionSlider("R. Eye, UP, X",1,MAX,REUPX,this));
-		add(sliders[REUPY]=new PointPositionSlider("R. Eye, UP, Y",1,MAX,REUPY,this));
-		add(sliders[RELOWX]=new PointPositionSlider("R. Eye, LP, X",1,MAX,RELOWX,this));
-		add(sliders[RELOWY]=new PointPositionSlider("R. Eye, LP, Y",1,MAX,RELOWY,this));
-
-		add(sliders[MOLFTX]=new PointPositionSlider("Mouth, LP, X",1,MAX,MOLFTX,this));
-		add(sliders[MOLFTY]=new PointPositionSlider("Mouth, LP, Y",1,MAX,MOLFTY,this));
-		add(sliders[MORGTX]=new PointPositionSlider("Mouth, RP, X",1,MAX,MORGTX,this));
-		add(sliders[MORGTY]=new PointPositionSlider("Mouth, RP, Y",1,MAX,MORGTY,this));
-		add(sliders[MOUPX]=new PointPositionSlider("Mouth, UP, X",1,MAX,MOUPX,this));
-		add(sliders[MOUPY]=new PointPositionSlider("Mouth, UP, Y",1,MAX,MOUPY,this));
-		add(sliders[MOLOWX]=new PointPositionSlider("Mouth, LP, X",1,MAX,MOLOWX,this));
-		add(sliders[MOLOWY]=new PointPositionSlider("Mouth, LP, Y",1,MAX,MOLOWY,this));
-
-		add(sliders[LBLFTX]=new PointPositionSlider("L. Brow, LP, X",1,MAX,LBLFTX,this));
-		add(sliders[LBLFTY]=new PointPositionSlider("L. Brow, LP, Y",1,MAX,LBLFTY,this));
-		add(sliders[LBRGTX]=new PointPositionSlider("L. Brow, RP, X",1,MAX,LBRGTX,this));
-		add(sliders[LBRGTY]=new PointPositionSlider("L. Brow, RP, Y",1,MAX,LBRGTY,this));
-		add(sliders[LBUPX]=new PointPositionSlider("L. Brow, UP, X",1,MAX,LBUPX,this));
-		add(sliders[LBUPY]=new PointPositionSlider("L. Brow, UP, Y",1,MAX,LBUPY,this));
-
-		add(sliders[RBLFTX]=new PointPositionSlider("R. Brow, LP, X",1,MAX,RBLFTX,this));
-		add(sliders[RBLFTY]=new PointPositionSlider("R. Brow, LP, Y",1,MAX,RBLFTY,this));
-		add(sliders[RBRGTX]=new PointPositionSlider("R. Brow, RP, X",1,MAX,RBRGTX,this));
-		add(sliders[RBRGTY]=new PointPositionSlider("R. Brow, RP, Y",1,MAX,RBRGTY,this));
-		add(sliders[RBUPX]=new PointPositionSlider("L. Brow, UP, X",1,MAX,RBUPX,this));
-		add(sliders[RBUPY]=new PointPositionSlider("L. Brow, UP, Y",1,MAX,RBUPY,this));
+		/*
+		 * slider für augen
+		 */
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eyes</center><br>Outer Point X", 
+				LELFTX, 
+				RERGTX, 
+				true,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eyes</center><br>Outer Point Y", 
+				LELFTY, 
+				RERGTY, 
+				false,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eyes</center><br>Inner Point X", 
+				LERGTX, 
+				RELFTX, 
+				true,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eyes</center><br>Inner Point Y", 
+				LERGTY, 
+				RELFTY, 
+				false,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eyes</center><br>Upper Point X", 
+				LEUPX, 
+				REUPX, 
+				true,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eyes</center><br>Upper Point Y", 
+				LEUPY, 
+				REUPY, 
+				false,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eyes</center><br>Lower Point X", 
+				LELOWX, 
+				RELOWX, 
+				true,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eyes</center><br>Lower Point Y", 
+				LELOWY, 
+				RELOWY, 
+				false,
+				this));
+		add(sliders.lastElement());
+		
+		
+		/*
+		 * slider für augenbrauen
+		 */
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eye Brows</center><br>Outer Point X", 
+				LBLFTX, 
+				RBRGTX, 
+				true,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eye Brows</center><br>Outer Point Y", 
+				LBLFTY, 
+				RBRGTY, 
+				false,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eye Brows</center><br>Inner Point X", 
+				LBRGTX, 
+				RBLFTX, 
+				true,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eye Brows</center><br>Inner Point Y", 
+				LBRGTY, 
+				RBLFTY, 
+				false,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eye Brows</center><br>Upper Brow Center Point X", 
+				LBUPX, 
+				RBUPX, 
+				true,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eye Brows</center><br>Upper Brow Center Point Y", 
+				LBUPY, 
+				RBUPY, 
+				false,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eye Brows</center><br>Lower Brow Center Point X", 
+				LBLOWX, 
+				RBLOWX, 
+				true,
+				this));
+		add(sliders.lastElement());
+		sliders.add(new MultiPositionSlider(
+				"<html><center>Eye Brows</center><br>Lower Brow Center Point Y", 
+				LBLOWY, 
+				RBLOWY, 
+				false,
+				this));
+		add(sliders.lastElement());
+		
+		
 	}
 
 	public int getNumberOfValues(){
@@ -180,7 +278,7 @@ public class ControlContainer extends Container {
 
 	@Override
 	public void setEnabled(boolean enable) {
-		for(PointPositionSlider p:sliders)
+		for(MultiPositionSlider p:sliders)
 		{
 			p.setEnabled(enable);
 		}
@@ -199,7 +297,7 @@ public class ControlContainer extends Container {
 	{
 		try
 		{
-			sliders[sliderIndex].setValue(sliders[sliderIndex].getValue()+valueChange);
+			sliders.get(sliderIndex).setValue(sliders.get(sliderIndex).getValue()+valueChange);
 		} catch (ArrayIndexOutOfBoundsException e)
 		{
 
@@ -209,7 +307,7 @@ public class ControlContainer extends Container {
 	public void setSliderPosition(int sliderIndex,int value){
 		try
 		{
-			sliders[sliderIndex].setValue(value);
+			sliders.get(sliderIndex).setValue(value);
 		} catch (ArrayIndexOutOfBoundsException e)
 		{
 

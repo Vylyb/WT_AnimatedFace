@@ -28,9 +28,10 @@ public class PlayAnimationThread extends Thread {
 			start=System.currentTimeMillis();
 			for(int index=0;index<animation.getNumberOfValues();index++)
 			{
-				AnimatedFace.window.controlContainer.setSliderPosition(index,animation.getFrameValue(frame,index));
+//				AnimatedFace.window.controlContainer.setSliderPosition(index,animation.getFrameValue(frame,index));
+				AnimatedFace.window.controlContainer.setValue(index, animation.getFrameValue(frame,index));
 			}
-			AnimatedFace.window.animtationContainer.moveTimeSlider(frame);
+			AnimatedFace.window.animtationContainer.moveTimeSlider(frame+1);
 			try {
 				sleep(animation.getMilliSecondsPerFrame()-(System.currentTimeMillis()-start));
 			} catch (InterruptedException e) {
