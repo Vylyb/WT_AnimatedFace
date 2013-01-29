@@ -15,7 +15,8 @@ public class Window extends JFrame {
 	
 	private OpenGLDisplay openglDisplay;
 	public ControlContainer controlContainer;
-	public AnimationContainer animtationContainer;
+	public AnimationContainer animationContainer;
+	public ControlMenuBar menubar;
 
 	public Window() {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -27,7 +28,7 @@ public class Window extends JFrame {
 		setLayout(new BorderLayout(5, 5));
 		
 		add(controlContainer=new ControlContainer(this),BorderLayout.EAST);
-		add(animtationContainer=new AnimationContainer(this),BorderLayout.NORTH);
+		add(animationContainer=new AnimationContainer(this),BorderLayout.NORTH);
 
 		try {
 			add(openglDisplay=new OpenGLDisplay(controlContainer),BorderLayout.CENTER);
@@ -35,6 +36,19 @@ public class Window extends JFrame {
 			e.printStackTrace();
 		}
 		
+		setJMenuBar(menubar=new ControlMenuBar());
+	}
+	
+	public String getDisplaySizeAndLocation(){
+		/*
+		 * extra options to copy into vlc player 
+		 * for capturing only the part of the part of the screen
+		 * where the face is displayed
+		 */
+		return 	" :screen-top="+openglDisplay.getLocationOnScreen().y+
+				" :screen-left="+openglDisplay.getLocationOnScreen().x+
+				" :screen-width="+openglDisplay.getSize().width+
+				" :screen-height="+openglDisplay.getSize().height;
 	}
 
 }

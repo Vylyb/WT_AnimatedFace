@@ -15,6 +15,10 @@ public class AnimationStep {
 		changes=new Vector<Change>();
 	}
 	
+	public AnimationStep() {
+		changes=new Vector<Change>();
+	}
+	
 	public double getChangePerFrame(int valueID){
 		for(Change c:changes)
 		{

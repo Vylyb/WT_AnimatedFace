@@ -74,7 +74,7 @@ public class RenderedAnimation{
 
 	public void play(JButton playButton, JSlider timeSlider) {
 		if(AnimatedFace.window.controlContainer!=null
-				&& AnimatedFace.window.animtationContainer!=null)
+				&& AnimatedFace.window.animationContainer!=null)
 			(new PlayAnimationThread(this,playButton,timeSlider)).start();
 		else
 			System.err.println("no access to control container or animation container!");

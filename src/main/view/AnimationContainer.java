@@ -8,6 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -21,11 +28,12 @@ import javax.swing.event.ChangeListener;
 import main.AnimatedFace;
 import main.animation.AnimationStep;
 import main.animation.Change;
+import main.xml.XmlFactory;
 
 
 public class AnimationContainer extends Container {
 
-	private final static String EDITOR="Editor",SIMUL="Simulation";
+	private final static String EDITOR="Switch to Editor",SIMUL="Switch to Simulation";
 
 	private Window window;
 	private JSlider timeSlider;
@@ -105,19 +113,17 @@ public class AnimationContainer extends Container {
 
 			@Override
 			public void mouseWheelMoved(MouseWheelEvent evt) {
-				Integer newValue=new Integer(((Integer)timeToggle.getValue()).intValue()-evt.getWheelRotation());
-				if(newValue.intValue()>=0&&newValue.intValue()<=AnimatedFace.FPS*AnimatedFace.MAX_SEC)
+				if(timeToggle.isEnabled())
 				{
-					timeToggle.setValue(newValue);
+					Integer newValue=new Integer(((Integer)timeToggle.getValue()).intValue()-evt.getWheelRotation());
+					if(newValue.intValue()>=0&&newValue.intValue()<=AnimatedFace.FPS*AnimatedFace.MAX_SEC)
+					{
+						timeToggle.setValue(newValue);
+					}
 				}
 			}
 		});
-		timeToggle.addChangeListener(new ChangeListener() {
-
-			@Override
-			public void stateChanged(ChangeEvent evt) {
-			}
-		});
+		timeToggle.setEnabled(false);
 
 		c2.add(keyFrameList=new JComboBox<AnimationStep>());
 		keyFrameList.addActionListener(new ActionListener() {
@@ -125,7 +131,7 @@ public class AnimationContainer extends Container {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-//					System.out.println(keyFrameList.getSelectedItem()+"\t"+AnimatedFace.framesfromString((String) keyFrameList.getSelectedItem().toString()));
+					//					System.out.println(keyFrameList.getSelectedItem()+"\t"+AnimatedFace.framesfromString((String) keyFrameList.getSelectedItem().toString()));
 				} catch (NullPointerException e) {
 				}
 			}
@@ -141,7 +147,7 @@ public class AnimationContainer extends Container {
 			}
 		});
 
-		addCurrentStep();
+		//		addCurrentStep();
 
 		add(c2);
 	}
@@ -150,8 +156,13 @@ public class AnimationContainer extends Container {
 		AnimatedFace.playCurrentAnimation(playButton,timeSlider);
 	}
 
-	protected void addCurrentStep() {
-		AnimationStep newStep=new AnimationStep(getTime());
+	protected void addCurrentStep(){
+		addCurrentStep(getTime());
+		timeToggle.setEnabled(true);
+	}
+
+	protected void addCurrentStep(int time) {
+		AnimationStep newStep=new AnimationStep(time);
 		if(lastValues==null)
 		{
 			lastValues=new Vector<Integer>();
@@ -174,6 +185,11 @@ public class AnimationContainer extends Container {
 		}
 		AnimatedFace.currentAnimation.addStep(newStep);
 
+		update();
+
+	}
+
+	public void update() {
 		updateTimeSlider();
 
 		/*
@@ -184,10 +200,9 @@ public class AnimationContainer extends Container {
 		{
 			keyFrameList.addItem(step);
 		}
-
 	}
 
-	private void updateTimeSlider() {
+	public void updateTimeSlider() {
 		int newMaxTime=AnimatedFace.currentAnimation.getNumberOfFrames();
 		timeSlider.setEnabled(newMaxTime>0);
 		timeSlider.setMaximum(newMaxTime);
@@ -221,4 +236,127 @@ public class AnimationContainer extends Container {
 		timeSlider.setValue(value);
 	}
 
+	public void loadTemplate(File file) 
+	{
+		BufferedReader reader;
+		try 
+		{
+			String content="",line="";
+			reader=new BufferedReader(new FileReader(file));
+			while((line=reader.readLine())!=null)
+			{
+				line=line.replaceAll("\\\t", "").toLowerCase();
+				content+=line.trim();
+			}
+
+			boolean inChange=false;
+
+			int id=-1,value=-1;
+			for(String tag:content.split("><"))
+			{
+				tag=tag.trim();
+
+				if(tag.length()>0 && !tag.startsWith("!--"))
+				{
+					//			System.out.println("\n"+tag);
+					if(tag.matches(AnimatedFace.CHANGE))
+					{
+						inChange=true;
+						System.out.println("inChange = "+inChange);
+					}
+					else if(tag.matches(XmlFactory.getCloseTag(AnimatedFace.CHANGE)))
+					{
+						inChange=false;
+						System.out.println("inChange = "+inChange);
+					}
+
+					if(inChange)
+					{
+						try 
+						{
+							String[] parts=tag.split("[><]");
+							if(parts[0].trim().matches(AnimatedFace.CHANGE_ID))
+							{
+								if(parts[2].trim().matches(XmlFactory.getCloseTag(AnimatedFace.CHANGE_ID)))
+								{
+									id = Integer.parseInt(parts[1]);
+									System.out.println("value_id = "+id);
+								}
+							}
+							if(parts[0].trim().matches(AnimatedFace.CHANGE_VAL))
+							{
+								if(parts[2].trim().matches(XmlFactory.getCloseTag(AnimatedFace.CHANGE_VAL)))
+								{
+									value = Integer.parseInt(parts[1]);
+									System.out.println("value_change = "+value);
+								}
+							}
+						} catch (ArrayIndexOutOfBoundsException e) {
+						} catch (NumberFormatException e){
+						}
+
+						if(id>=0 && value>=0)
+						{
+							window.controlContainer.setSliderPosition(id, value);
+							System.out.println("=> Set Value "+id+" to "+value);
+							id=-1;
+							value=-1;
+						}
+					}
+				}
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void saveTemplate(File file) 
+	{
+		BufferedWriter writer;
+		try {
+			writer=new BufferedWriter(new FileWriter(file));
+
+			startTag(AnimatedFace.CHANGES, writer);
+			for(int i=0;i<window.controlContainer.getNumberOfValues();i++){
+
+				try {
+					comment(window.controlContainer.getClass().getDeclaredFields()[i+1].getName(),writer);
+				} catch (SecurityException e) {
+				} catch (NullPointerException e) {
+				}
+
+				startTag(AnimatedFace.CHANGE, writer);
+				tag(i,AnimatedFace.CHANGE_ID,writer);
+				tag(window.controlContainer.getSliderPosition(i),AnimatedFace.CHANGE_VAL,writer);
+				closeTag(AnimatedFace.CHANGE, writer);
+			}
+			closeTag(AnimatedFace.CHANGES, writer);
+
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void closeTag(String tag, BufferedWriter writer) throws IOException {
+		writer.write(XmlFactory.closeTag(tag));
+	}
+
+	public static void startTag(String tag, BufferedWriter writer) throws IOException {
+		writer.write(XmlFactory.startTag(tag));
+	}
+
+	public static void tag(int value, String tag, BufferedWriter writer) throws IOException {
+		writer.write(XmlFactory.intToTag(value,tag));
+	}
+
+	public static void tag(String value, String tag, BufferedWriter writer) throws IOException {
+		writer.write(XmlFactory.stringToTag(value,tag));
+	}
+
+	public static void comment(String string, BufferedWriter writer) throws IOException {
+		writer.write(XmlFactory.stringToComment(string));
+	}
 }

@@ -1,0 +1,354 @@
+<changes>
+<!--
+	LELFTX
+-->
+<change>
+<value_id>
+	0
+</value_id>
+<value_change>
+	230
+</value_change>
+</change>
+<!--
+	LELFTY
+-->
+<change>
+<value_id>
+	1
+</value_id>
+<value_change>
+	506
+</value_change>
+</change>
+<!--
+	LERGTX
+-->
+<change>
+<value_id>
+	2
+</value_id>
+<value_change>
+	629
+</value_change>
+</change>
+<!--
+	LERGTY
+-->
+<change>
+<value_id>
+	3
+</value_id>
+<value_change>
+	146
+</value_change>
+</change>
+<!--
+	LEUPX
+-->
+<change>
+<value_id>
+	4
+</value_id>
+<value_change>
+	737
+</value_change>
+</change>
+<!--
+	LEUPY
+-->
+<change>
+<value_id>
+	5
+</value_id>
+<value_change>
+	619
+</value_change>
+</change>
+<!--
+	LELOWX
+-->
+<change>
+<value_id>
+	6
+</value_id>
+<value_change>
+	710
+</value_change>
+</change>
+<!--
+	LELOWY
+-->
+<change>
+<value_id>
+	7
+</value_id>
+<value_change>
+	250
+</value_change>
+</change>
+<!--
+	RELFTX
+-->
+<change>
+<value_id>
+	8
+</value_id>
+<value_change>
+	791
+</value_change>
+</change>
+<!--
+	RELFTY
+-->
+<change>
+<value_id>
+	9
+</value_id>
+<value_change>
+	210
+</value_change>
+</change>
+<!--
+	RERGTX
+-->
+<change>
+<value_id>
+	10
+</value_id>
+<value_change>
+	430
+</value_change>
+</change>
+<!--
+	RERGTY
+-->
+<change>
+<value_id>
+	11
+</value_id>
+<value_change>
+	402
+</value_change>
+</change>
+<!--
+	REUPX
+-->
+<change>
+<value_id>
+	12
+</value_id>
+<value_change>
+	501
+</value_change>
+</change>
+<!--
+	REUPY
+-->
+<change>
+<value_id>
+	13
+</value_id>
+<value_change>
+	522
+</value_change>
+</change>
+<!--
+	RELOWX
+-->
+<change>
+<value_id>
+	14
+</value_id>
+<value_change>
+	576
+</value_change>
+</change>
+<!--
+	RELOWY
+-->
+<change>
+<value_id>
+	15
+</value_id>
+<value_change>
+	359
+</value_change>
+</change>
+<!--
+	LBLFTX
+-->
+<change>
+<value_id>
+	16
+</value_id>
+<value_change>
+	135
+</value_change>
+</change>
+<!--
+	LBLFTY
+-->
+<change>
+<value_id>
+	17
+</value_id>
+<value_change>
+	635
+</value_change>
+</change>
+<!--
+	LBRGTX
+-->
+<change>
+<value_id>
+	18
+</value_id>
+<value_change>
+	189
+</value_change>
+</change>
+<!--
+	LBRGTY
+-->
+<change>
+<value_id>
+	19
+</value_id>
+<value_change>
+	450
+</value_change>
+</change>
+<!--
+	LBUPX
+-->
+<change>
+<value_id>
+	20
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+<!--
+	LBUPY
+-->
+<change>
+<value_id>
+	21
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+<!--
+	LBLOWX
+-->
+<change>
+<value_id>
+	22
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+<!--
+	LBLOWY
+-->
+<change>
+<value_id>
+	23
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+<!--
+	RBLFTX
+-->
+<change>
+<value_id>
+	24
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+<!--
+	RBLFTY
+-->
+<change>
+<value_id>
+	25
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+<!--
+	RBRGTX
+-->
+<change>
+<value_id>
+	26
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+<!--
+	RBRGTY
+-->
+<change>
+<value_id>
+	27
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+<!--
+	RBUPX
+-->
+<change>
+<value_id>
+	28
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+<!--
+	RBUPY
+-->
+<change>
+<value_id>
+	29
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+<!--
+	RBLOWX
+-->
+<change>
+<value_id>
+	30
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+<!--
+	RBLOWY
+-->
+<change>
+<value_id>
+	31
+</value_id>
+<value_change>
+	0
+</value_change>
+</change>
+</changes>

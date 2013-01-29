@@ -1,0 +1,384 @@
+<steps>
+<!--
+	Neuer Schritt
+-->
+<step>
+<stepstart>
+	0
+</stepstart>
+<changes>
+<change>
+<value_id>
+	0
+</value_id>
+<value_change>
+	230
+</value_change>
+</change>
+<change>
+<value_id>
+	1
+</value_id>
+<value_change>
+	310
+</value_change>
+</change>
+<change>
+<value_id>
+	2
+</value_id>
+<value_change>
+	430
+</value_change>
+</change>
+<change>
+<value_id>
+	3
+</value_id>
+<value_change>
+	310
+</value_change>
+</change>
+<change>
+<value_id>
+	4
+</value_id>
+<value_change>
+	340
+</value_change>
+</change>
+<change>
+<value_id>
+	5
+</value_id>
+<value_change>
+	380
+</value_change>
+</change>
+<change>
+<value_id>
+	6
+</value_id>
+<value_change>
+	350
+</value_change>
+</change>
+<change>
+<value_id>
+	7
+</value_id>
+<value_change>
+	250
+</value_change>
+</change>
+<change>
+<value_id>
+	8
+</value_id>
+<value_change>
+	570
+</value_change>
+</change>
+<change>
+<value_id>
+	9
+</value_id>
+<value_change>
+	310
+</value_change>
+</change>
+<change>
+<value_id>
+	10
+</value_id>
+<value_change>
+	770
+</value_change>
+</change>
+<change>
+<value_id>
+	11
+</value_id>
+<value_change>
+	310
+</value_change>
+</change>
+<change>
+<value_id>
+	12
+</value_id>
+<value_change>
+	660
+</value_change>
+</change>
+<change>
+<value_id>
+	13
+</value_id>
+<value_change>
+	380
+</value_change>
+</change>
+<change>
+<value_id>
+	14
+</value_id>
+<value_change>
+	650
+</value_change>
+</change>
+<change>
+<value_id>
+	15
+</value_id>
+<value_change>
+	250
+</value_change>
+</change>
+<change>
+<value_id>
+	16
+</value_id>
+<value_change>
+	220
+</value_change>
+</change>
+<change>
+<value_id>
+	17
+</value_id>
+<value_change>
+	360
+</value_change>
+</change>
+<change>
+<value_id>
+	18
+</value_id>
+<value_change>
+	470
+</value_change>
+</change>
+<change>
+<value_id>
+	19
+</value_id>
+<value_change>
+	360
+</value_change>
+</change>
+<change>
+<value_id>
+	20
+</value_id>
+<value_change>
+	190
+</value_change>
+</change>
+<change>
+<value_id>
+	21
+</value_id>
+<value_change>
+	470
+</value_change>
+</change>
+<change>
+<value_id>
+	22
+</value_id>
+<value_change>
+	210
+</value_change>
+</change>
+<change>
+<value_id>
+	23
+</value_id>
+<value_change>
+	450
+</value_change>
+</change>
+<change>
+<value_id>
+	24
+</value_id>
+<value_change>
+	530
+</value_change>
+</change>
+<change>
+<value_id>
+	25
+</value_id>
+<value_change>
+	360
+</value_change>
+</change>
+<change>
+<value_id>
+	26
+</value_id>
+<value_change>
+	780
+</value_change>
+</change>
+<change>
+<value_id>
+	27
+</value_id>
+<value_change>
+	360
+</value_change>
+</change>
+<change>
+<value_id>
+	28
+</value_id>
+<value_change>
+	810
+</value_change>
+</change>
+<change>
+<value_id>
+	29
+</value_id>
+<value_change>
+	470
+</value_change>
+</change>
+<change>
+<value_id>
+	30
+</value_id>
+<value_change>
+	790
+</value_change>
+</change>
+<change>
+<value_id>
+	31
+</value_id>
+<value_change>
+	450
+</value_change>
+</change>
+</changes>
+</step>
+<!--
+	Neuer Schritt
+-->
+<step>
+<stepstart>
+	15
+</stepstart>
+<changes>
+</changes>
+</step>
+<!--
+	Neuer Schritt
+-->
+<step>
+<stepstart>
+	48
+</stepstart>
+<changes>
+<change>
+<value_id>
+	0
+</value_id>
+<value_change>
+	-138
+</value_change>
+</change>
+<change>
+<value_id>
+	1
+</value_id>
+<value_change>
+	260
+</value_change>
+</change>
+<change>
+<value_id>
+	6
+</value_id>
+<value_change>
+	-333
+</value_change>
+</change>
+<change>
+<value_id>
+	7
+</value_id>
+<value_change>
+	659
+</value_change>
+</change>
+<change>
+<value_id>
+	10
+</value_id>
+<value_change>
+	138
+</value_change>
+</change>
+<change>
+<value_id>
+	11
+</value_id>
+<value_change>
+	260
+</value_change>
+</change>
+<change>
+<value_id>
+	14
+</value_id>
+<value_change>
+	333
+</value_change>
+</change>
+<change>
+<value_id>
+	15
+</value_id>
+<value_change>
+	659
+</value_change>
+</change>
+<change>
+<value_id>
+	19
+</value_id>
+<value_change>
+	-252
+</value_change>
+</change>
+<change>
+<value_id>
+	20
+</value_id>
+<value_change>
+	10
+</value_change>
+</change>
+<change>
+<value_id>
+	25
+</value_id>
+<value_change>
+	-252
+</value_change>
+</change>
+<change>
+<value_id>
+	28
+</value_id>
+<value_change>
+	-10
+</value_change>
+</change>
+</changes>
+</step>
+</steps>

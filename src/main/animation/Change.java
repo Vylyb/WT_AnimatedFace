@@ -5,6 +5,9 @@ public class Change {
 	private int valueID;
 	private int valueChange;
 	
+	public Change() {
+	}
+	
 	public Change(int valueID, int valueChange) {
 		this.valueID = valueID;
 		this.valueChange = valueChange;
@@ -20,6 +23,10 @@ public class Change {
 	
 	public void setValueChange(int valueChange) {
 		this.valueChange = valueChange;
+	}
+	
+	public void setValueID(int valueID) {
+		this.valueID = valueID;
 	}
 	
 }

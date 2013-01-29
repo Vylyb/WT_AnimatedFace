@@ -97,7 +97,7 @@ public class Animation{
 
 	public int getLastValue(int valueID) 
 			throws Exception {
-		return control.window.animtationContainer.getLastValue(valueID);
+		return control.window.animationContainer.getLastValue(valueID);
 	}
 
 }

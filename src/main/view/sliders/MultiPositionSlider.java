@@ -2,6 +2,7 @@ package main.view.sliders;
 
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseWheelEvent;
@@ -44,6 +45,7 @@ public class MultiPositionSlider extends Container implements ChangeListener,Mou
 		slider.addMouseListener(this);
 
 		label=new HtmlLabel(str+" ("+slider.getValue()+")");
+		label.setFont(Font.decode("verdana-6"));
 
 		setLayout(new FlowLayout(FlowLayout.RIGHT, 1, 0));
 
