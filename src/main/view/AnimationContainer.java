@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.util.Vector;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JSlider;
 import javax.swing.JSpinner;
@@ -28,6 +29,7 @@ import javax.swing.event.ChangeListener;
 import main.AnimatedFace;
 import main.animation.AnimationStep;
 import main.animation.Change;
+import main.sound.wave.WavePlayer;
 import main.xml.XmlFactory;
 
 
@@ -47,6 +49,8 @@ public class AnimationContainer extends Container {
 	private HtmlLabel maxTimeLabel;
 
 	private JButton playButton;
+
+	private JCheckBox playWaveCheckbox;
 
 	public AnimationContainer(final Window window) {
 		this.window=window;
@@ -147,18 +151,29 @@ public class AnimationContainer extends Container {
 			}
 		});
 
-		//		addCurrentStep();
-
+		c2.add(playWaveCheckbox=new JCheckBox("Play Wave File"));
+		playWaveCheckbox.setSelected(false);
+		playWaveCheckbox.setEnabled(false);
+		
 		add(c2);
 	}
 
 	protected void startAnimation() {
+		if(playWaveCheckbox.isSelected())
+		{
+			AnimatedFace.wavePlayer=new WavePlayer();
+			AnimatedFace.wavePlayer.start();
+		}
 		AnimatedFace.playCurrentAnimation(playButton,timeSlider);
 	}
 
 	protected void addCurrentStep(){
 		addCurrentStep(getTime());
 		timeToggle.setEnabled(true);
+	}
+	
+	public void allowWavePlay(){
+		playWaveCheckbox.setEnabled(true);
 	}
 
 	protected void addCurrentStep(int time) {
@@ -258,16 +273,13 @@ public class AnimationContainer extends Container {
 
 				if(tag.length()>0 && !tag.startsWith("!--"))
 				{
-					//			System.out.println("\n"+tag);
 					if(tag.matches(AnimatedFace.CHANGE))
 					{
 						inChange=true;
-						System.out.println("inChange = "+inChange);
 					}
 					else if(tag.matches(XmlFactory.getCloseTag(AnimatedFace.CHANGE)))
 					{
 						inChange=false;
-						System.out.println("inChange = "+inChange);
 					}
 
 					if(inChange)
@@ -280,7 +292,6 @@ public class AnimationContainer extends Container {
 								if(parts[2].trim().matches(XmlFactory.getCloseTag(AnimatedFace.CHANGE_ID)))
 								{
 									id = Integer.parseInt(parts[1]);
-									System.out.println("value_id = "+id);
 								}
 							}
 							if(parts[0].trim().matches(AnimatedFace.CHANGE_VAL))
@@ -288,7 +299,6 @@ public class AnimationContainer extends Container {
 								if(parts[2].trim().matches(XmlFactory.getCloseTag(AnimatedFace.CHANGE_VAL)))
 								{
 									value = Integer.parseInt(parts[1]);
-									System.out.println("value_change = "+value);
 								}
 							}
 						} catch (ArrayIndexOutOfBoundsException e) {
@@ -298,7 +308,6 @@ public class AnimationContainer extends Container {
 						if(id>=0 && value>=0)
 						{
 							window.controlContainer.setSliderPosition(id, value);
-							System.out.println("=> Set Value "+id+" to "+value);
 							id=-1;
 							value=-1;
 						}

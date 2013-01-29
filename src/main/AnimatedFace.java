@@ -14,6 +14,7 @@ import main.animation.Animation;
 import main.animation.AnimationStep;
 import main.animation.Change;
 import main.animation.RenderedAnimation;
+import main.sound.wave.WavePlayer;
 import main.view.Window;
 import main.xml.XmlFactory;
 
@@ -29,6 +30,9 @@ public class AnimatedFace{
 			CHANGE_VAL="value_change",
 			STEPS="steps";
 
+	private static String waveFileName="[No Sound File]";
+	private static String animationFileName="[No Animation File]";
+		
 	public static boolean editorMode=true;
 
 	public static int FPS=25,MAX_SEC=100;
@@ -38,10 +42,17 @@ public class AnimatedFace{
 	public static RenderedAnimation renderedAnimation;
 
 	public static Window window;
+	
+	public static WavePlayer wavePlayer;
+
+	public static File waveFile;
+
 
 	public static void main(String[] args) {
 		window=new Window();
+		wavePlayer=new WavePlayer();
 		window.setVisible(true);
+		updateWindowTitle();
 		System.out.println(window.getDisplaySizeAndLocation());
 	}
 
@@ -64,6 +75,17 @@ public class AnimatedFace{
 			renderCurrentAnimation();
 		}
 		renderedAnimation.play(playButton,timeSlider);
+	}
+
+	public static void setWaveFile(File wavefile){
+		waveFile=wavefile;
+		waveFileName=wavefile.getName();
+		window.animationContainer.allowWavePlay();
+		updateWindowTitle();
+	}
+
+	private static void updateWindowTitle() {
+		window.setTitle(animationFileName+" - "+waveFileName);
 	}
 
 	public static void renderCurrentAnimation(){
@@ -95,16 +117,13 @@ public class AnimatedFace{
 				
 				if(tag.length()>0 && !tag.startsWith("!--"))
 				{
-					System.out.println("\n"+tag);
 					if(tag.matches(STEP))
 					{
 						inStep=true;
-						System.out.println("inStep = "+inStep);
 					}
 					else if(tag.matches(CHANGE))
 					{
 						inChange=true;
-						System.out.println("inChange = "+inChange);
 					}
 					else if(tag.matches(XmlFactory.getCloseTag(STEP)))
 					{
@@ -112,9 +131,6 @@ public class AnimatedFace{
 
 						newAnimation.addStep(newStep);
 						newStep=null;
-						System.out.println("Added Step => "+newAnimation.getSteps().size());
-						
-						System.out.println("inStep = "+inStep);
 					}
 					else if(tag.matches(XmlFactory.getCloseTag(CHANGE)))
 					{
@@ -122,12 +138,10 @@ public class AnimatedFace{
 
 						try {
 							newStep.addChange(newChange);
-							System.out.println("Added Change => "+newStep.getChanges().size());
 						} catch (NullPointerException e) {
 						}
 						newChange=null;
 						
-						System.out.println("inChange = "+inChange);
 					}
 					
 					if(inStep)
@@ -144,7 +158,6 @@ public class AnimatedFace{
 								if(parts[2].trim().matches(XmlFactory.getCloseTag(STEP_START)))
 								{
 									newStep.setTime(Integer.parseInt(parts[1]));
-									System.out.println("newStep.time = "+newStep.getTime());
 								}
 							}
 						} catch (ArrayIndexOutOfBoundsException e) {
@@ -165,7 +178,6 @@ public class AnimatedFace{
 									if(parts[2].trim().matches(XmlFactory.getCloseTag(CHANGE_ID)))
 									{
 										newChange.setValueID(Integer.parseInt(parts[1]));
-										System.out.println("newChange.value_id = "+newChange.getValueID());
 									}
 								}
 								if(parts[0].trim().matches(CHANGE_VAL))
@@ -173,7 +185,6 @@ public class AnimatedFace{
 									if(parts[2].trim().matches(XmlFactory.getCloseTag(CHANGE_VAL)))
 									{
 										newChange.setValueChange(Integer.parseInt(parts[1]));
-										System.out.println("newChange.value_change = "+newChange.getValueChange());
 									}
 								}
 							} catch (ArrayIndexOutOfBoundsException e) {
@@ -185,6 +196,7 @@ public class AnimatedFace{
 			}
 			
 			setCurrentAnimation(newAnimation);
+			animationFileName=file.getName();
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -196,7 +208,6 @@ public class AnimatedFace{
 	private static void setCurrentAnimation(Animation newAnimation) {
 		currentAnimation=newAnimation;
 		window.animationContainer.update();
-		System.out.println("New Animation loaded\n"+currentAnimation.getNumberOfFrames()+" frames");
 	}
 
 	public static void saveAnimation(File file){
@@ -227,6 +238,7 @@ public class AnimatedFace{
 			closeTag(STEPS, writer);
 
 			writer.close();
+			animationFileName=file.getName();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

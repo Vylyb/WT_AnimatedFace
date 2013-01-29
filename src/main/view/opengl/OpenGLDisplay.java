@@ -139,6 +139,16 @@ public class OpenGLDisplay extends AWTGLCanvas {
 	}
 
 	private void drawLeftEyeBrow() {
+		fillBezierCurves(
+				control.LBLFTX,
+				control.LBLFTY,
+				control.LBUPX,
+				control.LBUPY,
+				control.LBRGTX,
+				control.LBRGTY,
+				control.LBLOWX,
+				control.LBLOWY,
+				true);
 		drawBezierCurve(
 				control.LBLFTX,
 				control.LBLFTY,
@@ -155,6 +165,11 @@ public class OpenGLDisplay extends AWTGLCanvas {
 				control.LBRGTX,
 				control.LBRGTY,
 				true);
+	}
+
+	private void fillBezierCurves(int jointX1, int jointY1, int arcX1, int arcY1,
+			int jointX2, int jointY2, int arcX2, int arcY2, boolean b) {
+		// TODO: Vielleicht implementieren, aber wohl etwas aufwändig...
 	}
 
 	private void drawRightEyeBrow() {
@@ -227,9 +242,7 @@ public class OpenGLDisplay extends AWTGLCanvas {
 	private void drawEyeBall(int x1, int y1, int x2, int y2,
 			int x3, int y3, int x4, int y4) 
 	{
-		int x=x1+(x1-x3);
-		int y=y2+(y2-y4);
-		
+		// TODO: Vielleicht implementieren, aber wohl etwas aufwändig...
 	}
 
 	private void drawBezierCurve(int p1X, int p1Y, int p2X, int p2Y, int p3X, int p3Y, boolean useValuesAsIndex) {
