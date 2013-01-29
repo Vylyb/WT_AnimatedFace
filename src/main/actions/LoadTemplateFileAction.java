@@ -8,6 +8,7 @@ public class LoadTemplateFileAction extends XmlFileAction {
 
 	public LoadTemplateFileAction() {
 		super("Load a Template ...");
+		lastDirectory="facetemplates";
 	}
 
 	@Override

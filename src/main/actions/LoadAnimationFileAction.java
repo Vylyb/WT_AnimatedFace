@@ -8,6 +8,7 @@ public class LoadAnimationFileAction extends XmlFileAction {
 
 	public LoadAnimationFileAction() {
 		super("Open Animation File");
+		lastDirectory="animations";
 	}
 
 	@Override

@@ -11,6 +11,7 @@ public class SaveTemplateFileAction extends XmlFileAction {
 
 	public SaveTemplateFileAction() {
 		super("Save the current Face as a Template");
+		lastDirectory="facetemplates";
 	}
 
 	@Override

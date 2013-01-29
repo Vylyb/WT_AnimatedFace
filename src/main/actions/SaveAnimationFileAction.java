@@ -11,6 +11,7 @@ public class SaveAnimationFileAction extends XmlFileAction {
 
 	public SaveAnimationFileAction() {
 		super("Save Animation As ...");
+		lastDirectory="animations";
 	}
 	
 	@Override
