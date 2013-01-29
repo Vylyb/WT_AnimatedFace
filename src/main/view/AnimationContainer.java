@@ -33,7 +33,7 @@ import main.xml.XmlFactory;
 
 public class AnimationContainer extends Container {
 
-	private final static String EDITOR="Switch to Editor",SIMUL="Switch to Simulation";
+	private final static String EDITOR="Switch to Simulation",SIMUL="Switch to Editor";
 
 	private Window window;
 	private JSlider timeSlider;
