@@ -1,6 +1,8 @@
 package main.view;
 
 import java.awt.BorderLayout;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 
 import javax.swing.JFrame;
 
@@ -11,7 +13,7 @@ import org.lwjgl.LWJGLException;
 
 
 
-public class Window extends JFrame {
+public class Window extends JFrame implements ComponentListener {
 	
 	private OpenGLDisplay openglDisplay;
 	public ControlContainer controlContainer;
@@ -37,6 +39,10 @@ public class Window extends JFrame {
 		}
 		
 		setJMenuBar(menubar=new ControlMenuBar());
+		
+		addComponentListener(this);
+
+//		System.out.println(getDisplaySizeAndLocation());
 	}
 	
 	public String getDisplaySizeAndLocation(){
@@ -45,10 +51,26 @@ public class Window extends JFrame {
 		 * for capturing only the part of the part of the screen
 		 * where the face is displayed
 		 */
-		return 	" :screen-top="+openglDisplay.getLocationOnScreen().y+
+		return 	"VLC-Screencast-Optionen:\n :screen-top="+openglDisplay.getLocationOnScreen().y+
 				" :screen-left="+openglDisplay.getLocationOnScreen().x+
 				" :screen-width="+openglDisplay.getSize().width+
 				" :screen-height="+openglDisplay.getSize().height;
 	}
+
+	@Override
+	public void componentResized(ComponentEvent e) {
+		System.out.println(getDisplaySizeAndLocation());
+	}
+
+	@Override
+	public void componentMoved(ComponentEvent e) {
+		System.out.println(getDisplaySizeAndLocation());
+	}
+
+	@Override
+	public void componentShown(ComponentEvent e) {}
+
+	@Override
+	public void componentHidden(ComponentEvent e) {}
 
 }

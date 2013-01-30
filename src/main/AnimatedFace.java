@@ -59,7 +59,6 @@ public class AnimatedFace{
 		wavePlayer=new WavePlayer();
 		window.setVisible(true);
 		updateWindowTitle();
-		System.out.println(window.getDisplaySizeAndLocation());
 	}
 
 	public static String toSecondsAndFrames(int time) {
@@ -225,6 +224,8 @@ public class AnimatedFace{
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally{
+			renderedAnimation=null;
 		}
 	}
 

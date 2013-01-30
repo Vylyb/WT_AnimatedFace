@@ -1,0 +1,443 @@
+<animation>
+<settings>
+<wave_file>benshaar_synth_7.wav</wave_file>
+</settings>
+<steps>
+<!--
+	Neuer Schritt
+-->
+<step>
+<stepstart>
+	0
+</stepstart>
+<changes>
+<change>
+<value_id>
+	0
+</value_id>
+<new_value>
+	260
+</new_value>
+</change>
+<change>
+<value_id>
+	1
+</value_id>
+<new_value>
+	360
+</new_value>
+</change>
+<change>
+<value_id>
+	2
+</value_id>
+<new_value>
+	430
+</new_value>
+</change>
+<change>
+<value_id>
+	3
+</value_id>
+<new_value>
+	360
+</new_value>
+</change>
+<change>
+<value_id>
+	4
+</value_id>
+<new_value>
+	340
+</new_value>
+</change>
+<change>
+<value_id>
+	5
+</value_id>
+<new_value>
+	417
+</new_value>
+</change>
+<change>
+<value_id>
+	6
+</value_id>
+<new_value>
+	350
+</new_value>
+</change>
+<change>
+<value_id>
+	7
+</value_id>
+<new_value>
+	310
+</new_value>
+</change>
+<change>
+<value_id>
+	8
+</value_id>
+<new_value>
+	216
+</new_value>
+</change>
+<change>
+<value_id>
+	9
+</value_id>
+<new_value>
+	371
+</new_value>
+</change>
+<change>
+<value_id>
+	10
+</value_id>
+<new_value>
+	452
+</new_value>
+</change>
+<change>
+<value_id>
+	11
+</value_id>
+<new_value>
+	377
+</new_value>
+</change>
+<change>
+<value_id>
+	12
+</value_id>
+<new_value>
+	308
+</new_value>
+</change>
+<change>
+<value_id>
+	13
+</value_id>
+<new_value>
+	520
+</new_value>
+</change>
+<change>
+<value_id>
+	14
+</value_id>
+<new_value>
+	322
+</new_value>
+</change>
+<change>
+<value_id>
+	15
+</value_id>
+<new_value>
+	495
+</new_value>
+</change>
+<change>
+<value_id>
+	16
+</value_id>
+<new_value>
+	142
+</new_value>
+</change>
+<change>
+<value_id>
+	17
+</value_id>
+<new_value>
+	149
+</new_value>
+</change>
+<change>
+<value_id>
+	18
+</value_id>
+<new_value>
+	60
+</new_value>
+</change>
+<change>
+<value_id>
+	19
+</value_id>
+<new_value>
+	867
+</new_value>
+</change>
+<change>
+<value_id>
+	20
+</value_id>
+<new_value>
+	866
+</new_value>
+</change>
+</changes>
+</step>
+<!--
+	Neuer Schritt
+-->
+<step>
+<stepstart>27</stepstart>
+<changes>
+</changes>
+</step>
+<!--
+	Neuer Schritt
+-->
+<step>
+<stepstart>32</stepstart>
+<changes>
+<change>
+<value_id>
+	0
+</value_id>
+<new_value>
+	266
+</new_value>
+</change>
+<change>
+<value_id>
+	2
+</value_id>
+<new_value>
+	425
+</new_value>
+</change>
+<change>
+<value_id>
+	4
+</value_id>
+<new_value>
+	338
+</new_value>
+</change>
+<change>
+<value_id>
+	5
+</value_id>
+<new_value>
+	449
+</new_value>
+</change>
+<change>
+<value_id>
+	7
+</value_id>
+<new_value>
+	298
+</new_value>
+</change>
+<change>
+<value_id>
+	8
+</value_id>
+<new_value>
+	214
+</new_value>
+</change>
+<change>
+<value_id>
+	10
+</value_id>
+<new_value>
+	456
+</new_value>
+</change>
+<change>
+<value_id>
+	12
+</value_id>
+<new_value>
+	324
+</new_value>
+</change>
+<change>
+<value_id>
+	13
+</value_id>
+<new_value>
+	586
+</new_value>
+</change>
+<change>
+<value_id>
+	15
+</value_id>
+<new_value>
+	538
+</new_value>
+</change>
+<change>
+<value_id>
+	17
+</value_id>
+<new_value>
+	161
+</new_value>
+</change>
+<change>
+<value_id>
+	18
+</value_id>
+<new_value>
+	57
+</new_value>
+</change>
+<change>
+<value_id>
+	19
+</value_id>
+<new_value>
+	879
+</new_value>
+</change>
+<change>
+<value_id>
+	20
+</value_id>
+<new_value>
+	876
+</new_value>
+</change>
+</changes>
+</step>
+<!--
+	Neuer Schritt
+-->
+<step>
+<stepstart>40</stepstart>
+<changes>
+<change>
+<value_id>
+	0
+</value_id>
+<new_value>
+	260
+</new_value>
+</change>
+<change>
+<value_id>
+	2
+</value_id>
+<new_value>
+	430
+</new_value>
+</change>
+<change>
+<value_id>
+	4
+</value_id>
+<new_value>
+	340
+</new_value>
+</change>
+<change>
+<value_id>
+	5
+</value_id>
+<new_value>
+	417
+</new_value>
+</change>
+<change>
+<value_id>
+	7
+</value_id>
+<new_value>
+	310
+</new_value>
+</change>
+<change>
+<value_id>
+	8
+</value_id>
+<new_value>
+	216
+</new_value>
+</change>
+<change>
+<value_id>
+	10
+</value_id>
+<new_value>
+	452
+</new_value>
+</change>
+<change>
+<value_id>
+	12
+</value_id>
+<new_value>
+	308
+</new_value>
+</change>
+<change>
+<value_id>
+	13
+</value_id>
+<new_value>
+	520
+</new_value>
+</change>
+<change>
+<value_id>
+	15
+</value_id>
+<new_value>
+	495
+</new_value>
+</change>
+<change>
+<value_id>
+	17
+</value_id>
+<new_value>
+	149
+</new_value>
+</change>
+<change>
+<value_id>
+	18
+</value_id>
+<new_value>
+	60
+</new_value>
+</change>
+<change>
+<value_id>
+	19
+</value_id>
+<new_value>
+	867
+</new_value>
+</change>
+<change>
+<value_id>
+	20
+</value_id>
+<new_value>
+	866
+</new_value>
+</change>
+</changes>
+</step>
+<!--
+	Neuer Schritt
+-->
+<step>
+<stepstart>
+	61
+</stepstart>
+<changes>
+</changes>
+</step>
+</steps>
+</animation>
