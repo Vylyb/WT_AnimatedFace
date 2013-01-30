@@ -15,21 +15,19 @@ import javax.swing.event.ChangeListener;
 import main.view.ControlContainer;
 import main.view.HtmlLabel;
 
-public class MultiPositionSlider extends Container implements ChangeListener,MouseWheelListener,MouseListener{
+public class ValueSlider extends Container implements ChangeListener,MouseWheelListener,MouseListener{
 
 	private String str;
-	private int index,mirrorIndex;
+	private int index;
 	private ControlContainer control;
 	private JSlider slider;
 	private HtmlLabel label;
-	private boolean activated,mirrorValues;
+	private boolean activated;
 
-	public MultiPositionSlider(String str, int index, int mirrorIndex, boolean mirrorValues,ControlContainer control) 
+	public ValueSlider(String str, int index, ControlContainer control) 
 	{
 		this.str=str;
 		this.index=index;
-		this.mirrorIndex=mirrorIndex;
-		this.mirrorValues=mirrorValues;
 		this.control=control;
 		activated=false;
 
@@ -85,12 +83,6 @@ public class MultiPositionSlider extends Container implements ChangeListener,Mou
 	@Override
 	public void stateChanged(ChangeEvent e) {
 		control.setValue(index,slider.getValue());
-		if(mirrorValues){
-			control.setValue(mirrorIndex, ControlContainer.MAX-slider.getValue());
-		}
-		else{
-			control.setValue(mirrorIndex, slider.getValue());
-		}
 		label.setText(str+" ("+slider.getValue()+")");
 	}
 

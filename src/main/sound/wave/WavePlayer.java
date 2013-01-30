@@ -63,6 +63,7 @@ public class WavePlayer extends Thread {
         try { 
             while (nBytesRead != -1) { 
                 nBytesRead = audioInputStream.read(abData, 0, abData.length);
+
                 if (nBytesRead >= 0) 
                     auline.write(abData, 0, nBytesRead);
             } 

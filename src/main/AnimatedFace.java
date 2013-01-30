@@ -8,14 +8,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.swing.JButton;
-import javax.swing.JSlider;
 
 import main.animation.Animation;
 import main.animation.AnimationStep;
-import main.animation.Change;
+import main.animation.ChangedValue;
 import main.animation.RenderedAnimation;
 import main.sound.wave.WavePlayer;
 import main.view.Window;
+import main.view.sliders.TimeSlider;
 import main.xml.XmlFactory;
 
 
@@ -27,11 +27,17 @@ public class AnimatedFace{
 			CHANGE="change",
 			CHANGES="changes",
 			CHANGE_ID="value_id",
-			CHANGE_VAL="value_change",
-			STEPS="steps";
+			CHANGE_NEW_VAL="new_value",
+			STEPS="steps",
+			WAVE_FILE="wave_file",
+			NO_SOUND="[No Sound File]",
+			NO_FILE="[No Animation File]",
+			ANIM="animation",
+			TEMPL="template",
+			SETTINGS="settings";
 
-	private static String waveFileName="[No Sound File]";
-	private static String animationFileName="[No Animation File]";
+	private static String waveFileName=NO_SOUND;
+	private static String animationFileName=NO_FILE;
 		
 	public static boolean editorMode=true;
 
@@ -70,7 +76,7 @@ public class AnimatedFace{
 		return seconds*FPS+frames;
 	}
 
-	public static void playCurrentAnimation(JButton playButton, JSlider timeSlider){
+	public static void playCurrentAnimation(JButton playButton, TimeSlider timeSlider){
 		if(renderedAnimation==null){
 			renderCurrentAnimation();
 		}
@@ -109,7 +115,7 @@ public class AnimatedFace{
 
 			boolean inStep=false,inChange=false;
 			AnimationStep newStep = null;
-			Change newChange=null;
+			ChangedValue newChange=null;
 			
 			for(String tag:content.split("><"))
 			{
@@ -137,7 +143,8 @@ public class AnimatedFace{
 						inChange=false;
 
 						try {
-							newStep.addChange(newChange);
+							newStep.addChangedValue(newChange);
+							
 						} catch (NullPointerException e) {
 						}
 						newChange=null;
@@ -168,7 +175,7 @@ public class AnimatedFace{
 						{
 							if(newChange==null)
 							{
-								newChange=new Change();
+								newChange=new ChangedValue();
 							}
 							
 							try {
@@ -180,11 +187,11 @@ public class AnimatedFace{
 										newChange.setValueID(Integer.parseInt(parts[1]));
 									}
 								}
-								if(parts[0].trim().matches(CHANGE_VAL))
+								if(parts[0].trim().matches(CHANGE_NEW_VAL))
 								{
-									if(parts[2].trim().matches(XmlFactory.getCloseTag(CHANGE_VAL)))
+									if(parts[2].trim().matches(XmlFactory.getCloseTag(CHANGE_NEW_VAL)))
 									{
-										newChange.setValueChange(Integer.parseInt(parts[1]));
+										newChange.setChangedValue(Integer.parseInt(parts[1]));
 									}
 								}
 							} catch (ArrayIndexOutOfBoundsException e) {
@@ -192,12 +199,28 @@ public class AnimatedFace{
 							}
 						}
 					}
+					else
+					{
+						try {
+							String[] parts=tag.split("[><]");
+							if(parts[0].trim().matches(WAVE_FILE))
+							{
+								if(parts[2].trim().matches(XmlFactory.getCloseTag(WAVE_FILE)))
+								{
+									setWaveFile(new File("wavefiles/"+parts[1]));
+								}
+							}
+						} catch (ArrayIndexOutOfBoundsException e) {
+						} catch (NumberFormatException e){
+						}
+					}
 				}
 			}
 			
 			setCurrentAnimation(newAnimation);
 			animationFileName=file.getName();
-			
+			updateWindowTitle();
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -214,6 +237,15 @@ public class AnimatedFace{
 		BufferedWriter writer;
 		try {
 			writer=new BufferedWriter(new FileWriter(file));
+			
+			startTag(ANIM, writer);
+
+			startTag(SETTINGS, writer);
+			if(waveFile!=null)
+			{
+				tag(waveFile.getName(),WAVE_FILE,writer);
+			}
+			closeTag(SETTINGS, writer);
 
 			startTag(STEPS, writer);
 
@@ -224,10 +256,10 @@ public class AnimatedFace{
 				tag(step.getTime(),STEP_START,writer);
 
 				startTag(CHANGES, writer);
-				for(Change change:step.getChanges()){
+				for(ChangedValue change:step.getChangedValues()){
 					startTag(CHANGE, writer);
 					tag(change.getValueID(),CHANGE_ID,writer);
-					tag(change.getValueChange(),CHANGE_VAL,writer);
+					tag(change.getChangedValue(),CHANGE_NEW_VAL,writer);
 					closeTag(CHANGE, writer);
 				}
 				closeTag(CHANGES, writer);
@@ -236,9 +268,12 @@ public class AnimatedFace{
 			}
 
 			closeTag(STEPS, writer);
+			
+			closeTag(ANIM, writer);
 
 			writer.close();
 			animationFileName=file.getName();
+			updateWindowTitle();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

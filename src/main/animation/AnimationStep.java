@@ -7,27 +7,16 @@ import main.AnimatedFace;
 public class AnimationStep {
 
 	private int time;
-	private Vector<Change> changes;
+	private Vector<ChangedValue> changedvalues;
 	private int duration=-1;
 
 	public AnimationStep(int time) {
 		this.time = time;
-		changes=new Vector<Change>();
+		changedvalues=new Vector<ChangedValue>();
 	}
 	
 	public AnimationStep() {
-		changes=new Vector<Change>();
-	}
-	
-	public double getChangePerFrame(int valueID){
-		for(Change c:changes)
-		{
-			if(c.getValueID()==valueID)
-			{
-				return (double)((double)c.getValueChange()/(double)duration);
-			}
-		}
-		return 0.0;
+		changedvalues=new Vector<ChangedValue>();
 	}
 
 	public int getDuration() {
@@ -40,9 +29,9 @@ public class AnimationStep {
 
 	public String toExtendedString() {
 		String s="Step @ "+AnimatedFace.toSecondsAndFrames(time)+" sec (frame "+time+")";
-		for(Change c:changes)
+		for(ChangedValue c:changedvalues)
 		{
-			s+="\n\tID "+c.getValueID()+"\tnew Value: "+c.getValueChange();
+			s+="\n\tID "+c.getValueID()+"\tnew Value: "+c.getChangedValue();
 		}
 		return s;
 	}
@@ -61,54 +50,43 @@ public class AnimationStep {
 	}
 
 	public int getValue(int valueID){
-		for(Change c:changes)
+		for(ChangedValue c:changedvalues)
 		{
 			if(c.getValueID()==valueID)
 			{
-				return c.getValueChange();
+				return c.getChangedValue();
 			}
 		}
 		return -1;
 	}
 
-	public boolean addChange(Change change){
-		for(Change c:changes)
+	public boolean addChangedValue(ChangedValue changedvalue){
+		for(ChangedValue c:changedvalues)
 		{
-			if(c.getValueID()==change.getValueID())
+			if(c.getValueID()==changedvalue.getValueID())
 			{
 				return false;
 			}
 		}
-		changes.add(change);
+		changedvalues.add(changedvalue);
 
 		return true;
 	}
 
 	public boolean changeNewValueOfID(int id,int newValue){
-		for(Change c:changes)
+		for(ChangedValue c:changedvalues)
 		{
 			if(c.getValueID()==id)
 			{
-				c.setValueChange(newValue);
+				c.setChangedValue(newValue);
 				return true;
 			}
 		}
 		return false;
 	}
 
-	public Vector<Change> getChanges() {
-		return changes;
+	public Vector<ChangedValue> getChangedValues() {
+		return changedvalues;
 	}
 	
-	public int getEndValueOfStep(int valueID){
-		for(Change c:changes)
-		{
-			if(c.getValueID()==valueID)
-			{
-				return c.getValueChange();
-			}
-		}
-		return -1;
-	}
-
 }

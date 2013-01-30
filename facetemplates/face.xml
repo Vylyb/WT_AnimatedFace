@@ -1,464 +1,233 @@
 <changes>
 <!--
-	LELFTX
+	EYE_OUTER_POINT_X
 -->
 <change>
 <value_id>
 	0
 </value_id>
-<value_change>
-	230
-</value_change>
+<new_value>
+	260
+</new_value>
 </change>
 <!--
-	LELFTY
+	EYE_OUTER_POINT_Y
 -->
 <change>
 <value_id>
 	1
 </value_id>
-<value_change>
+<new_value>
 	360
-</value_change>
+</new_value>
 </change>
 <!--
-	LERGTX
+	EYE_INNER_POINT_X
 -->
 <change>
 <value_id>
 	2
 </value_id>
-<value_change>
+<new_value>
 	430
-</value_change>
+</new_value>
 </change>
 <!--
-	LERGTY
+	EYE_INNER_POINT_Y
 -->
 <change>
 <value_id>
 	3
 </value_id>
-<value_change>
+<new_value>
 	360
-</value_change>
+</new_value>
 </change>
 <!--
-	LEUPX
+	EYE_UPPER_POINT_X
 -->
 <change>
 <value_id>
 	4
 </value_id>
-<value_change>
+<new_value>
 	340
-</value_change>
+</new_value>
 </change>
 <!--
-	LEUPY
+	EYE_UPPER_POINT_Y
 -->
 <change>
 <value_id>
 	5
 </value_id>
-<value_change>
-	440
-</value_change>
+<new_value>
+	417
+</new_value>
 </change>
 <!--
-	LELOWX
+	EYE_LOWER_POINT_X
 -->
 <change>
 <value_id>
 	6
 </value_id>
-<value_change>
+<new_value>
 	350
-</value_change>
+</new_value>
 </change>
 <!--
-	LELOWY
+	EYE_LOWER_POINT_Y
 -->
 <change>
 <value_id>
 	7
 </value_id>
-<value_change>
+<new_value>
 	310
-</value_change>
+</new_value>
 </change>
 <!--
-	RELFTX
+	BROW_OUTER_POINT_X
 -->
 <change>
 <value_id>
 	8
 </value_id>
-<value_change>
-	255
-</value_change>
+<new_value>
+	216
+</new_value>
 </change>
 <!--
-	RELFTY
+	BROW_OUTER_POINT_Y
 -->
 <change>
 <value_id>
 	9
 </value_id>
-<value_change>
-	365
-</value_change>
+<new_value>
+	371
+</new_value>
 </change>
 <!--
-	RERGTX
+	BROW_INNER_POINT_X
 -->
 <change>
 <value_id>
 	10
 </value_id>
-<value_change>
-	430
-</value_change>
+<new_value>
+	452
+</new_value>
 </change>
 <!--
-	RERGTY
+	BROW_INNER_POINT_Y
 -->
 <change>
 <value_id>
 	11
 </value_id>
-<value_change>
-	364
-</value_change>
+<new_value>
+	377
+</new_value>
 </change>
 <!--
-	REUPX
+	BROW_UPPER_POINT_X
 -->
 <change>
 <value_id>
 	12
 </value_id>
-<value_change>
-	219
-</value_change>
+<new_value>
+	308
+</new_value>
 </change>
 <!--
-	REUPY
+	BROW_UPPER_POINT_Y
 -->
 <change>
 <value_id>
 	13
 </value_id>
-<value_change>
-	420
-</value_change>
+<new_value>
+	520
+</new_value>
 </change>
 <!--
-	RELOWX
+	BROW_LOWER_POINT_X
 -->
 <change>
 <value_id>
 	14
 </value_id>
-<value_change>
-	470
-</value_change>
+<new_value>
+	322
+</new_value>
 </change>
 <!--
-	RELOWY
+	BROW_LOWER_POINT_Y
 -->
 <change>
 <value_id>
 	15
 </value_id>
-<value_change>
-	440
-</value_change>
+<new_value>
+	495
+</new_value>
 </change>
 <!--
-	LBLFTX
+	HEAD_OUTER_POINT_X
 -->
 <change>
 <value_id>
 	16
 </value_id>
-<value_change>
-	190
-</value_change>
+<new_value>
+	142
+</new_value>
 </change>
 <!--
-	LBLFTY
+	HEAD_OUTER_POINT_Y
 -->
 <change>
 <value_id>
 	17
 </value_id>
-<value_change>
-	540
-</value_change>
+<new_value>
+	149
+</new_value>
 </change>
 <!--
-	LBRGTX
+	HEAD_ARC_POINT_X
 -->
 <change>
 <value_id>
 	18
 </value_id>
-<value_change>
-	210
-</value_change>
+<new_value>
+	60
+</new_value>
 </change>
 <!--
-	LBRGTY
+	HEAD_ARC_POINT_Y
 -->
 <change>
 <value_id>
 	19
 </value_id>
-<value_change>
-	520
-</value_change>
+<new_value>
+	867
+</new_value>
 </change>
 <!--
-	LBUPX
+	HEAD_CENTER_POINT_Y
 -->
 <change>
 <value_id>
 	20
 </value_id>
-<value_change>
-	126
-</value_change>
-</change>
-<!--
-	LBUPY
--->
-<change>
-<value_id>
-	21
-</value_id>
-<value_change>
-	200
-</value_change>
-</change>
-<!--
-	LBLOWX
--->
-<change>
-<value_id>
-	22
-</value_id>
-<value_change>
-	76
-</value_change>
-</change>
-<!--
-	LBLOWY
--->
-<change>
-<value_id>
-	23
-</value_id>
-<value_change>
-	930
-</value_change>
-</change>
-<!--
-	RBLFTX
--->
-<change>
-<value_id>
-	24
-</value_id>
-<value_change>
-	930
-</value_change>
-</change>
-<!--
-	RBLFTY
--->
-<change>
-<value_id>
-	25
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	RBRGTX
--->
-<change>
-<value_id>
-	26
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	RBRGTY
--->
-<change>
-<value_id>
-	27
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	RBUPX
--->
-<change>
-<value_id>
-	28
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	RBUPY
--->
-<change>
-<value_id>
-	29
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	RBLOWX
--->
-<change>
-<value_id>
-	30
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	RBLOWY
--->
-<change>
-<value_id>
-	31
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	HLOUTX
--->
-<change>
-<value_id>
-	32
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	HLOUTY
--->
-<change>
-<value_id>
-	33
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	HLARCX
--->
-<change>
-<value_id>
-	34
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	HLARCY
--->
-<change>
-<value_id>
-	35
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	HDINX
--->
-<change>
-<value_id>
-	36
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	HDINY
--->
-<change>
-<value_id>
-	37
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	HROUTX
--->
-<change>
-<value_id>
-	38
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	HROUTY
--->
-<change>
-<value_id>
-	39
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	HRARCX
--->
-<change>
-<value_id>
-	40
-</value_id>
-<value_change>
-	0
-</value_change>
-</change>
-<!--
-	HRARCY
--->
-<change>
-<value_id>
-	41
-</value_id>
-<value_change>
-	0
-</value_change>
+<new_value>
+	866
+</new_value>
 </change>
 </changes>

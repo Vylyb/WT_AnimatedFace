@@ -1,17 +1,17 @@
 package main.animation;
 
 import javax.swing.JButton;
-import javax.swing.JSlider;
 
 import main.AnimatedFace;
+import main.view.sliders.TimeSlider;
 
 public class PlayAnimationThread extends Thread {
 	
 	private RenderedAnimation animation;
 	private JButton playButton;
-	private JSlider timeSlider;
+	private TimeSlider timeSlider;
 
-	public PlayAnimationThread(RenderedAnimation animation,JButton playButton, JSlider timeSlider) {
+	public PlayAnimationThread(RenderedAnimation animation,JButton playButton, TimeSlider timeSlider) {
 		this.animation=animation;
 		this.playButton=playButton;
 		this.timeSlider=timeSlider;
@@ -34,7 +34,7 @@ public class PlayAnimationThread extends Thread {
 			AnimatedFace.window.animationContainer.moveTimeSlider(frame+1);
 			try {
 				sleep(animation.getMilliSecondsPerFrame()-(System.currentTimeMillis()-start));
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
 			}
 		}
 		playButton.setEnabled(true);

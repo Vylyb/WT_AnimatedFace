@@ -1,9 +1,10 @@
 package main.animation;
 
 import javax.swing.JButton;
-import javax.swing.JSlider;
 
 import main.AnimatedFace;
+import main.view.ControlContainer;
+import main.view.sliders.TimeSlider;
 
 public class RenderedAnimation{
 
@@ -28,17 +29,31 @@ public class RenderedAnimation{
 
 		for(AnimationStep step:animation.getSteps())
 		{
-			if(step.getDuration()==0)
+			if(step.getTime()==0)
 			{
-				for(Change c:step.getChanges())
+				for(ChangedValue c:step.getChangedValues())
 				{
-					frameValues[currentFrame][c.getValueID()]=c.getValueChange();
+					frameValues[currentFrame][c.getValueID()]=c.getChangedValue();
 				}
 				startValuesIndex=currentFrame;
 				currentFrame++;
 			}
 			else
 			{
+				double changesPerFrame[]=new double[animation.getNumberOfValues()];
+				int val;
+				for(int k=0;k<animation.getNumberOfValues();k++){
+
+					if((val=step.getValue(k))>=0 && val<=ControlContainer.MAX)
+					{
+						changesPerFrame[k]=(double)((double)(val-frameValues[startValuesIndex][k])/step.getDuration());
+					}
+					else
+					{
+						changesPerFrame[k]=0.0;
+					}
+				}
+
 				for(int i=1;i<=step.getDuration();i++)
 				{
 					if(currentFrame<frames)
@@ -50,7 +65,7 @@ public class RenderedAnimation{
 							 */
 							if(i==step.getDuration())
 							{
-								if((frameValues[currentFrame][k]=step.getEndValueOfStep(k))<0)
+								if((frameValues[currentFrame][k]=step.getValue(k))<0)
 								{
 									frameValues[currentFrame][k]=frameValues[startValuesIndex][k];
 								}
@@ -60,7 +75,7 @@ public class RenderedAnimation{
 							 */
 							else
 							{
-								frameValues[currentFrame][k]=(int)((double)frameValues[startValuesIndex][k]+(double)i*step.getChangePerFrame(k));
+								frameValues[currentFrame][k]=(int)((double)frameValues[startValuesIndex][k]+(double)i*changesPerFrame[k]);
 							}
 						}
 						currentFrame++;
@@ -72,7 +87,7 @@ public class RenderedAnimation{
 
 	}
 
-	public void play(JButton playButton, JSlider timeSlider) {
+	public void play(JButton playButton, TimeSlider timeSlider) {
 		if(AnimatedFace.window.controlContainer!=null
 				&& AnimatedFace.window.animationContainer!=null)
 			(new PlayAnimationThread(this,playButton,timeSlider)).start();
@@ -87,7 +102,7 @@ public class RenderedAnimation{
 			return -1;
 		}
 	}
-	
+
 	public long getMilliSecondsPerFrame() {
 		return milliSecondsPerFrame;
 	}

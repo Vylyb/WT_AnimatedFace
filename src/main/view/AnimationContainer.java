@@ -20,16 +20,14 @@ import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
-import javax.swing.JSlider;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 import main.AnimatedFace;
 import main.animation.AnimationStep;
-import main.animation.Change;
+import main.animation.ChangedValue;
 import main.sound.wave.WavePlayer;
+import main.view.sliders.TimeSlider;
 import main.xml.XmlFactory;
 
 
@@ -38,7 +36,7 @@ public class AnimationContainer extends Container {
 	private final static String EDITOR="Switch to Simulation",SIMUL="Switch to Editor";
 
 	private Window window;
-	private JSlider timeSlider;
+	private TimeSlider timeSlider;
 	private JButton stateButton;
 	private JButton newStepButton;
 	private JSpinner timeToggle;
@@ -62,25 +60,7 @@ public class AnimationContainer extends Container {
 
 		c1.add(new HtmlLabel(AnimatedFace.toSecondsAndFrames(0)),BorderLayout.WEST);
 
-		c1.add(timeSlider=new JSlider(),BorderLayout.CENTER);
-		timeSlider.addChangeListener(new ChangeListener() {
-
-			@Override
-			public void stateChanged(ChangeEvent evt) {
-				try {
-					updateTimeLabel(((Integer)timeSlider.getValue()).intValue(),AnimatedFace.currentAnimation.getNumberOfFrames());
-				} catch (NullPointerException e) {
-				}
-			}
-		});
-		timeSlider.setValue(0);
-		timeSlider.setMaximum(0);
-		timeSlider.setEnabled(false);
-		timeSlider.setMinorTickSpacing(1);
-		timeSlider.setMajorTickSpacing(AnimatedFace.FPS);
-		timeSlider.setPaintTicks(true);
-		timeSlider.setSnapToTicks(true);
-		timeSlider.setPaintTrack(false);
+		c1.add(timeSlider=new TimeSlider(),BorderLayout.CENTER);
 
 		c1.add(maxTimeLabel=new HtmlLabel("--:-- / --:--"),BorderLayout.EAST);
 
@@ -90,6 +70,7 @@ public class AnimationContainer extends Container {
 		c2.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 0));
 
 		c2.add(stateButton=new JButton(AnimatedFace.editorMode?EDITOR:SIMUL));
+		stateButton.setEnabled(false);
 		stateButton.addActionListener(new ActionListener() {
 
 			@Override
@@ -99,6 +80,7 @@ public class AnimationContainer extends Container {
 				window.controlContainer.setEnabled(AnimatedFace.editorMode);
 				newStepButton.setEnabled(AnimatedFace.editorMode);
 				playButton.setEnabled(!AnimatedFace.editorMode);
+				AnimatedFace.renderedAnimation=null;
 			}
 		});
 
@@ -184,7 +166,7 @@ public class AnimationContainer extends Container {
 			for(int i=0;i<window.controlContainer.getNumberOfValues();i++)
 			{
 				lastValues.add(new Integer(window.controlContainer.getValue(i)));
-				newStep.addChange(new Change(i, window.controlContainer.getValue(i)));
+				newStep.addChangedValue(new ChangedValue(i, window.controlContainer.getValue(i)));
 			}
 		}
 		else
@@ -193,7 +175,7 @@ public class AnimationContainer extends Container {
 			{
 				if(lastValues.get(i).intValue()!=window.controlContainer.getValue(i))
 				{
-					newStep.addChange(new Change(i, window.controlContainer.getValue(i)-lastValues.get(i)));
+					newStep.addChangedValue(new ChangedValue(i, window.controlContainer.getValue(i)));
 					lastValues.setElementAt(new Integer(window.controlContainer.getValue(i)), i);
 				}
 			}
@@ -215,6 +197,8 @@ public class AnimationContainer extends Container {
 		{
 			keyFrameList.addItem(step);
 		}
+		
+		stateButton.setEnabled(keyFrameList.getItemCount()>0);
 	}
 
 	public void updateTimeSlider() {
@@ -294,9 +278,9 @@ public class AnimationContainer extends Container {
 									id = Integer.parseInt(parts[1]);
 								}
 							}
-							if(parts[0].trim().matches(AnimatedFace.CHANGE_VAL))
+							if(parts[0].trim().matches(AnimatedFace.CHANGE_NEW_VAL))
 							{
-								if(parts[2].trim().matches(XmlFactory.getCloseTag(AnimatedFace.CHANGE_VAL)))
+								if(parts[2].trim().matches(XmlFactory.getCloseTag(AnimatedFace.CHANGE_NEW_VAL)))
 								{
 									value = Integer.parseInt(parts[1]);
 								}
@@ -338,7 +322,7 @@ public class AnimationContainer extends Container {
 
 				startTag(AnimatedFace.CHANGE, writer);
 				tag(i,AnimatedFace.CHANGE_ID,writer);
-				tag(window.controlContainer.getSliderPosition(i),AnimatedFace.CHANGE_VAL,writer);
+				tag(window.controlContainer.getSliderPosition(i),AnimatedFace.CHANGE_NEW_VAL,writer);
 				closeTag(AnimatedFace.CHANGE, writer);
 			}
 			closeTag(AnimatedFace.CHANGES, writer);
