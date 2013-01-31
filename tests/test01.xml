@@ -1,0 +1,38 @@
+<tests>
+<description>
+	Ihnen werden mehrere Videos von animierten Gesichtern gezeigt.#
+	Diese Videos enthalten einen gesprochenen Satz.#
+	Bitte waehlen Sie die Stelle des Satzes aus, an der Sie eine besondere Betonung wahrgenommen haben.#
+	#
+	Klicken Sie auf [Start Tests], um zu beginnen.
+</description>
+	
+<test_case>
+	<videofile>test2.avi</videofile>
+	<sentence>
+		<word>
+			Bens
+		</word>
+		<word>
+			Haar
+		</word>
+		<word>
+			war
+		</word>
+		<word>
+			sehr
+		</word>
+		<word>
+			lang.
+		</word>
+	</sentence>
+	<voice_emph>
+		3
+	</voice_emph>
+	<face_emph>
+		4
+	</face_emph>
+</test_case>
+
+
+</tests>
