@@ -7,6 +7,7 @@ import java.util.Vector;
 
 import main.perceptiontest.PerceptionTestWindow;
 import main.perceptiontest.TestCase;
+import main.perceptiontest.TutorialTestCase;
 import main.xml.XmlFactory;
 
 public class PerceptionTest {
@@ -15,14 +16,19 @@ public class PerceptionTest {
 	private static Vector<TestCase> testCases;
 	private static int nextTest;
 	private static String description="";
+	private static String endText;
 	private final static String 
 	VIDEO_FILE="videofile",
 	VOICE_EMPH="voice_emph",
 	FACE_EMPH="face_emph",
 	DESC="description",
+	ENDTEXT="endtext",
 	SENTENCE="sentence",
 	WORD="word",
-	TEST="test_case";
+	TESTCASE="test_case",
+	TUTORIAL="tutorial",
+	EMPHS="emphasizes",
+	VALUE="value";
 
 	/**
 	 * @param args
@@ -43,7 +49,7 @@ public class PerceptionTest {
 					content+=line.trim();
 				}
 
-				boolean inTest=false,inSentence=false;
+				boolean inTest=false,inSentence=false,inTutorial=false,inEmphasizes=false;
 				TestCase newTest=null;
 
 				for(String tag:content.split("><"))
@@ -52,17 +58,18 @@ public class PerceptionTest {
 
 					if(tag.length()>0 && !tag.startsWith("!--"))
 					{
-						if(tag.matches(TEST))
+						if(tag.matches(TESTCASE))
 						{
 							inTest=true;
 						}
-						else if(tag.matches(XmlFactory.getCloseTag(TEST)))
+						else if(tag.matches(XmlFactory.getCloseTag(TESTCASE)))
 						{
 							inTest=false;
 
 							testCases.add(newTest);
 							newTest=null;
 						}
+
 						else if(tag.matches(SENTENCE))
 						{
 							inSentence=true;
@@ -70,6 +77,27 @@ public class PerceptionTest {
 						else if(tag.matches(XmlFactory.getCloseTag(SENTENCE)))
 						{
 							inSentence=false;
+						}
+
+						else if(tag.matches(TUTORIAL))
+						{
+							inTutorial=true;
+						}
+						else if(tag.matches(XmlFactory.getCloseTag(TUTORIAL)))
+						{
+							inTutorial=false;
+							
+							testCases.add(newTest);
+							newTest=null;
+						}
+
+						else if(tag.matches(EMPHS))
+						{
+							inEmphasizes=true;
+						}
+						else if(tag.matches(XmlFactory.getCloseTag(EMPHS)))
+						{
+							inEmphasizes=false;
 						}
 
 						if(inTest)
@@ -138,6 +166,59 @@ public class PerceptionTest {
 
 						}
 
+						else if(inTutorial)
+						{
+							if(newTest==null)
+							{
+								newTest=new TutorialTestCase();
+							}
+
+							if(inSentence)
+							{
+								try {
+									String[] parts=tag.split("[><]");
+									if(parts[0].trim().matches(WORD))
+									{
+										if(parts[2].trim().matches(XmlFactory.getCloseTag(WORD)))
+										{
+											newTest.addWord(parts[1]);
+										}
+									}
+								} catch (ArrayIndexOutOfBoundsException e) {
+								} 
+							}
+							else if(inEmphasizes)
+							{
+								try {
+									String[] parts=tag.split("[><]");
+									if(parts[0].trim().matches(VALUE))
+									{
+										if(parts[2].trim().matches(XmlFactory.getCloseTag(VALUE)))
+										{
+											((TutorialTestCase)newTest).addValue(Integer.parseInt(parts[1]));
+										}
+									}
+								} catch (ArrayIndexOutOfBoundsException e) {
+								} catch (NumberFormatException e) {
+								} 
+							}
+							else
+							{
+								try {
+									String[] parts=tag.split("[><]");
+									if(parts[0].trim().matches(VIDEO_FILE))
+									{
+										if(parts[2].trim().matches(XmlFactory.getCloseTag(VIDEO_FILE)))
+										{
+											newTest.setVideoFile(parts[1]);
+										}
+									}
+								} catch (ArrayIndexOutOfBoundsException e) {
+								} 
+
+							}
+						}
+
 						else
 						{
 							try {
@@ -147,6 +228,19 @@ public class PerceptionTest {
 									if(parts[2].trim().matches(XmlFactory.getCloseTag(DESC)))
 									{
 										description=parts[1].replaceAll("#", "<br>");
+									}
+								}
+							} catch (ArrayIndexOutOfBoundsException e) {
+							} catch (NumberFormatException e) {
+							}
+
+							try {
+								String[] parts=tag.split("[><]");
+								if(parts[0].trim().matches(ENDTEXT))
+								{
+									if(parts[2].trim().matches(XmlFactory.getCloseTag(ENDTEXT)))
+									{
+										endText=parts[1].replaceAll("#", "<br>");
 									}
 								}
 							} catch (ArrayIndexOutOfBoundsException e) {
@@ -171,13 +265,21 @@ public class PerceptionTest {
 		return description;
 	}
 
+	public static String getEndText() {
+		return endText;
+	}
+
 	public static int getNumberOfTests() {
 		return testCases.size();
 	}
 
 	public static TestCase getNextTest(){
 
-		return testCases.get((nextTest=(nextTest+1<testCases.size()?nextTest+1:0)));
+		try {
+			return testCases.get(++nextTest);
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 	public static TestCase getCurrentTest(){

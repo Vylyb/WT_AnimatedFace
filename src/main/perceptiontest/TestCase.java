@@ -52,15 +52,17 @@ public class TestCase {
 		return words;
 	}
 
-	public void setUserSelectionForWord(String word, int value) {
-		int i=0;
-		for(String w:words)
-		{
-			if(w.matches(word))
-			{
-				userSelections.set(i, new Integer(value));
-			}
-			i++;
+	public void setUserSelectionForWord(int index, int value) {
+		try {
+			userSelections.set(index, new Integer(value));
+		} catch (Exception e) {
+		}
+	}
+
+	public void setUserSelectionForWord(int index, Integer value) {
+		try {
+			userSelections.set(index,value);
+		} catch (Exception e) {
 		}
 	}
 
@@ -70,7 +72,7 @@ public class TestCase {
 	
 	public String getUserSelection(int index){
 		try {
-			return words.get(index)+"\t"+userSelections.get(index);
+			return words.get(index)+" "+userSelections.get(index);
 		} catch (Exception e) {
 		}
 		return "";

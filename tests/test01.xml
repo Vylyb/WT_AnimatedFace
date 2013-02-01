@@ -1,37 +1,266 @@
 <tests>
 <description>
-	Ihnen werden mehrere Videos von animierten Gesichtern gezeigt.#
-	Diese Videos enthalten einen gesprochenen Satz.#
-	Bitte waehlen Sie die Stelle des Satzes aus, an der Sie eine besondere Betonung wahrgenommen haben.#
-	#
-	Klicken Sie auf [Start Tests], um zu beginnen.
+	In diesem Wahrnehmungstest geht es um die Qualit&auml;t von synthetischer Sprache im Zusammenhang mit virtuellen Agenten, Avataren.
+	##Um verschiedene Bedeutungen ein und desselben Satzes auszudr&uuml;cken, muss der Grad der Betonung jeder Silbe eines Satzes recht exakt eingestellt werden k&ouml;nnen. In diesem Test wollen wir untersuchen, wie gut eine solche Animation gelingt.
+	##Du h&ouml;rst gleich verschiedene Audiodateien, bzw. siehst eine Reihe von Videos, bei denen kurze S&auml;tze gesprochen werden.
+	#Achte bei den Videos genau auf das Gesicht in Verbindung mit der Audioinformation und bewerte dann, wie stark jede Silbe des Satzes betont war.
+	#Diesen Grad der Betonung sollst du nun in den Zahlenfeldern unter den W&ouml;rtern auf einer Skala von 1 bis 5 ausdr&uuml;cken.
+	#Wenn eine Silbe z.B. sehr stark betont erscheint, vergibst du die 5, ist die Silbe sehr schwach betont, vergibst du die 1 und wenn sie eher mittel stark betont ist, die 3. 	Du kannst jedes Beispiel mehrmals anh&ouml;ren, bis du jede Silbe bewertet hast.
+	##Dann klicke auf "Weiter" und setze den Versuch mit dem n&auml;chsten Beispiel fort.
+	##Zur Vorbereitung werden wir jetzt in einem Tutorial ein Beispiel pr&auml;sentieren, bei dem die Bewertung bereits erfolgt ist.
 </description>
-	
-<test_case>
-	<videofile>test2.avi</videofile>
+
+<endtext>
+	Vielen Dank f&uuml;r die Mitarbeit!
+</endtext>
+
+<tutorial>
+	<videofile>
+		bensharr_1_sound_7.avi
+	</videofile>
 	<sentence>
 		<word>
 			Bens
 		</word>
 		<word>
+			-
+		</word>
+		<word>
 			Haar
+		</word>
+		<word>
+			-
 		</word>
 		<word>
 			war
 		</word>
 		<word>
+			-
+		</word>
+		<word>
 			sehr
+		</word>
+		<word>
+			-
 		</word>
 		<word>
 			lang.
 		</word>
 	</sentence>
+	<emphasizes>
+		<value>
+			4
+		</value>
+		<value>
+			3
+		</value>
+		<value>
+			1
+		</value>
+		<value>
+			1
+		</value>
+		<value>
+			1
+		</value>
+		<value>
+			1
+		</value>
+		<value>
+			5
+		</value>
+		<value>
+			4
+		</value>
+		<value>
+			1
+		</value>
+	</emphasizes>
+</tutorial>
+	
+<test_case>
+	<videofile>
+		bensharr_1_sound_3.avi
+	</videofile>
+	<sentence>
+		<word>
+			Bens
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			Haar
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			war
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			sehr
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			lang.
+		</word>
+	</sentence>
+	<face_emph>
+		1
+	</face_emph>
 	<voice_emph>
 		3
 	</voice_emph>
+</test_case>
+
+<test_case>
+	<videofile>bensharr_1_sound_7.avi</videofile>
+	<sentence>
+		<word>
+			Bens
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			Haar
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			war
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			sehr
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			lang.
+		</word>
+	</sentence>
 	<face_emph>
-		4
+		1
 	</face_emph>
+	<voice_emph>7</voice_emph>
+</test_case>
+
+<test_case>
+	<videofile>bensharr_3_sound_0.avi</videofile>
+	<sentence>
+		<word>
+			Bens
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			Haar
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			war
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			sehr
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			lang.
+		</word>
+	</sentence>
+	<face_emph>3</face_emph>
+	<voice_emph>0</voice_emph>
+</test_case>
+
+<test_case>
+	<videofile>bensharr_1_sound_2.avi</videofile>
+	<sentence>
+		<word>
+			Bens
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			Haar
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			war
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			sehr
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			lang.
+		</word>
+	</sentence>
+	<face_emph>
+		1
+	</face_emph>
+	<voice_emph>2</voice_emph>
+</test_case>
+
+<test_case>
+	<videofile>bensharr_7_sound_0.avi</videofile>
+	<sentence>
+		<word>
+			Bens
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			Haar
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			war
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			sehr
+		</word>
+		<word>
+			-
+		</word>
+		<word>
+			lang.
+		</word>
+	</sentence>
+	<face_emph>7</face_emph>
+	<voice_emph>0</voice_emph>
 </test_case>
 
 
