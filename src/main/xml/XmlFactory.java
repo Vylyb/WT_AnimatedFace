@@ -25,4 +25,5 @@ public class XmlFactory {
 	public static String getCloseTag(String tag){
 		return "/"+tag;
 	}
+
 }

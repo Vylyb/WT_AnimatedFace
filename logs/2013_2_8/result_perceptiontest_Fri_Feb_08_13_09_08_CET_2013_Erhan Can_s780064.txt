@@ -1,0 +1,1090 @@
+Test #1
+Video: johnsbein_synth_6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 1
+4 ganz 0
+5 blau. 0
+
+Test #2
+Video: jimsrad_synth_3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 3
+3 war 3
+4 nie 3
+5 grün. 0
+
+Test #3
+Video: benshaar_synth_9.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 4
+3 war 3
+4 sehr 0
+5 lang. 3
+
+Test #4
+Video: jimsrad_synth.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 2
+2 Rad 2
+3 war 0
+4 nie 4
+5 grün. 0
+
+Test #5
+Video: johnsbein_synth_2.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 2
+2 Bein 0
+3 war 2
+4 ganz 0
+5 blau. 2
+
+Test #6
+Video: jimsrad_synth_5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 3
+4 nie 3
+5 grün. 3
+
+Test #7
+Video: johnsbein_synth_9_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 3
+4 ganz 2
+5 blau. 3
+
+Test #8
+Video: jimsrad_synth_6_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 0
+3 war 4
+4 nie 5
+5 grün. 0
+
+Test #9
+Video: johnsbein_synth_8_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 3
+3 war 4
+4 ganz 0
+5 blau. 0
+
+Test #10
+Video: jimsrad_synth_1_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 3
+3 war 5
+4 nie 0
+5 grün. 0
+
+Test #11
+Video: benshaar_monoton_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 2
+2 Haar 4
+3 war 2
+4 sehr 2
+5 lang. 2
+
+Test #12
+Video: jimsrad_synth_8_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 3
+2 Rad 2
+3 war 3
+4 nie 5
+5 grün. 2
+
+Test #13
+Video: benshaar_synth_2_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 2
+2 Haar 3
+3 war 4
+4 sehr 3
+5 lang. 2
+
+Test #14
+Video: jimsrad_synth_8_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 4
+4 nie 4
+5 grün. 0
+
+Test #15
+Video: benshaar_synth_1_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 0
+3 war 2
+4 sehr 0
+5 lang. 0
+
+Test #16
+Video: johnsbein_synth_7_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 2
+4 ganz 5
+5 blau. 3
+
+Test #17
+Video: jimsrad_synth_9_video9.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 3
+4 nie 4
+5 grün. 5
+
+Test #18
+Video: johnsbein_synth_4_video6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 3
+4 ganz 2
+5 blau. 3
+
+Test #19
+Video: jimsrad_synth_7_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 3
+3 war 2
+4 nie 5
+5 grün. 0
+
+Test #20
+Video: benshaar_monoton_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 2
+3 war 0
+4 sehr 0
+5 lang. 0
+
+Test #21
+Video: jimsrad_monoton_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 2
+2 Rad 3
+3 war 3
+4 nie 0
+5 grün. 0
+
+Test #22
+Video: benshaar_synth_2_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 3
+2 Haar 4
+3 war 5
+4 sehr 2
+5 lang. 2
+
+Test #23
+Video: nod_jimsrad_synth_5_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 3
+3 war 2
+4 nie 2
+5 grün. 0
+
+Test #24
+Video: johnsbein_synth_9_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 2
+3 war 3
+4 ganz 0
+5 blau. 4
+
+Test #25
+Video: benshaar_synth_6_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 3
+3 war 3
+4 sehr 3
+5 lang. 0
+
+Test #26
+Video: johnsbein_synth_8_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 2
+2 Bein 2
+3 war 5
+4 ganz 3
+5 blau. 5
+
+Test #27
+Video: benshaar_synth_8_video9.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 3
+2 Haar 5
+3 war 5
+4 sehr 2
+5 lang. 2
+
+Test #28
+Video: jimsrad_synth_3_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 3
+2 Rad 2
+3 war 3
+4 nie 3
+5 grün. 3
+
+Test #29
+Video: jimsrad_synth_8_video6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 2
+2 Rad 2
+3 war 2
+4 nie 4
+5 grün. 0
+
+Test #30
+Video: nod_jimsrad_synth_3_video6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 3
+4 nie 2
+5 grün. 0
+
+Test #31
+Video: johnsbein_synth_5_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 2
+2 Bein 0
+3 war 3
+4 ganz 0
+5 blau. 3
+
+Test #32
+Video: jimsrad_synth_5_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 3
+4 nie 5
+5 grün. 0
+
+Test #33
+Video: johnsbein_synth_2_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 3
+4 ganz 0
+5 blau. 3
+
+Test #34
+Video: johnsbein_synth_1_video2.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 2
+2 Bein 2
+3 war 2
+4 ganz 3
+5 blau. 0
+
+Test #35
+Video: johnsbein_synth_1_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 0
+4 ganz 3
+5 blau. 0
+
+Test #36
+Video: benshaar_synth_1_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 4
+3 war 3
+4 sehr 3
+5 lang. 0
+
+Test #37
+Video: jimsrad_synth_4_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 3
+4 nie 2
+5 grün. 0
+
+Test #38
+Video: johnsbein_synth_6_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 2
+2 Bein 0
+3 war 3
+4 ganz 2
+5 blau. 0
+
+Test #39
+Video: jimsrad_synth_8_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 3
+3 war 3
+4 nie 0
+5 grün. 2
+
+Test #40
+Video: jimsrad_synth_2_video2.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 2
+4 nie 2
+5 grün. 0
+
+Test #41
+Video: benshaar_synth_5_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 2
+2 Haar 5
+3 war 4
+4 sehr 2
+5 lang. 0
+
+Test #42
+Video: johnsbein_synth_8_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 0
+4 ganz 2
+5 blau. 3
+
+Test #43
+Video: nod_jimsrad_synth_5_video2.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 3
+3 war 3
+4 nie 3
+5 grün. 0
+
+Test #44
+Video: benshaar_synth_2_video9.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 3
+3 war 3
+4 sehr 3
+5 lang. 2
+
+Test #45
+Video: benshaar_synth_6_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 3
+2 Haar 4
+3 war 4
+4 sehr 3
+5 lang. 3
+
+Test #46
+Video: johnsbein_synth_4_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 2
+2 Bein 0
+3 war 3
+4 ganz 2
+5 blau. 3
+
+Test #47
+Video: benshaar_synth_7_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 2
+2 Haar 4
+3 war 3
+4 sehr 3
+5 lang. 2
+
+Test #48
+Video: benshaar_synth_7_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 2
+2 Haar 4
+3 war 4
+4 sehr 0
+5 lang. 2
+
+Test #49
+Video: nod_jimsrad_synth_7_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 0
+3 war 4
+4 nie 2
+5 grün. 0
+
+Test #50
+Video: jimsrad_synth_6_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 1
+3 war 5
+4 nie 0
+5 grün. 3
+
+Test #51
+Video: benshaar_synth_5_video9.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 3
+3 war 2
+4 sehr 3
+5 lang. 3
+
+Test #52
+Video: benshaar_monoton_video2.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 3
+2 Haar 3
+3 war 0
+4 sehr 0
+5 lang. 0
+
+Test #53
+Video: jimsrad_monoton_video6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 0
+3 war 3
+4 nie 2
+5 grün. 0
+
+Test #54
+Video: jimsrad_monoton_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 0
+4 nie 0
+5 grün. 0
+
+Test #55
+Video: johnsbein_synth_2_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 3
+2 Bein 0
+3 war 2
+4 ganz 0
+5 blau. 2
+
+Test #56
+Video: nod_jimsrad_synth_7_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 0
+3 war 3
+4 nie 4
+5 grün. 0
+
+Test #57
+Video: jimsrad_synth_4_video2.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 3
+3 war 2
+4 nie 2
+5 grün. 0
+
+Test #58
+Video: jimsrad_synth_3_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 5
+3 war 4
+4 nie 2
+5 grün. 0
+
+Test #59
+Video: benshaar_synth_6_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 5
+3 war 3
+4 sehr 0
+5 lang. 3
+
+Test #60
+Video: benshaar_synth_8_video2.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 5
+3 war 5
+4 sehr 3
+5 lang. 0
+
+Test #61
+Video: johnsbein_synth_5_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 3
+4 ganz 3
+5 blau. 0
+
+Test #62
+Video: jimsrad_synth_8_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 2
+4 nie 4
+5 grün. 0
+
+Test #63
+Video: johnsbein_monoton_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 3
+4 ganz 0
+5 blau. 0
+
+Test #64
+Video: johnsbein_synth_3_video9.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 3
+4 ganz 2
+5 blau. 3
+
+Test #65
+Video: johnsbein_synth_3_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 4
+3 war 4
+4 ganz 2
+5 blau. 0
+
+Test #66
+Video: johnsbein_synth_3_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 4
+4 ganz 3
+5 blau. 0
+
+Test #67
+Video: johnsbein_synth_6_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 5
+4 ganz 2
+5 blau. 0
+
+Test #68
+Video: jimsrad_synth_4_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 3
+2 Rad 0
+3 war 3
+4 nie 2
+5 grün. 0
+
+Test #69
+Video: johnsbein_synth_2_video6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 5
+4 ganz 0
+5 blau. 0
+
+Test #70
+Video: benshaar_synth_8_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 2
+2 Haar 4
+3 war 4
+4 sehr 0
+5 lang. 2
+
+Test #71
+Video: johnsbein_synth_8_video2.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 3
+4 ganz 0
+5 blau. 0
+
+Test #72
+Video: benshaar_monoton_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 2
+3 war 2
+4 sehr 0
+5 lang. 0
+
+Test #73
+Video: jimsrad_synth_2_video6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 5
+4 nie 3
+5 grün. 0
+
+Test #74
+Video: johnsbein_synth_6_video6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 5
+4 ganz 4
+5 blau. 0
+
+Test #75
+Video: benshaar_synth_3_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 5
+3 war 4
+4 sehr 4
+5 lang. 4
+
+Test #76
+Video: johnsbein_synth_9_video9.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 3
+4 ganz 2
+5 blau. 5
+
+Test #77
+Video: johnsbein_synth_3_video6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 3
+4 ganz 2
+5 blau. 3
+
+Test #78
+Video: benshaar_synth_1_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 4
+2 Haar 5
+3 war 4
+4 sehr 4
+5 lang. 3
+
+Test #79
+Video: benshaar_synth_8_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 2
+2 Haar 4
+3 war 3
+4 sehr 3
+5 lang. 2
+
+Test #80
+Video: johnsbein_synth_7_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 3
+4 ganz 0
+5 blau. 0
+
+Test #81
+Video: nod_jimsrad_synth_7_video6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 3
+4 nie 0
+5 grün. 2
+
+Test #82
+Video: nod_jimsrad_synth_3_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 2
+4 nie 2
+5 grün. 3
+
+Test #83
+Video: jimsrad_synth_6_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 4
+4 nie 0
+5 grün. 3
+
+Test #84
+Video: johnsbein_synth_4_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 3
+4 ganz 3
+5 blau. 4
+
+Test #85
+Video: benshaar_synth_4_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 5
+3 war 3
+4 sehr 3
+5 lang. 2
+
+Test #86
+Video: jimsrad_monoton_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 0
+3 war 3
+4 nie 2
+5 grün. 0
+
+Test #87
+Video: jimsrad_synth_5_video6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 0
+3 war 3
+4 nie 3
+5 grün. 0
+
+Test #88
+Video: jimsrad_synth_8_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 3
+4 nie 5
+5 grün. 3
+
+Test #89
+Video: johnsbein_synth_4_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 2
+2 Bein 3
+3 war 0
+4 ganz 3
+5 blau. 0
+
+Test #90
+Video: johnsbein_synth_9_video2.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 2
+2 Bein 0
+3 war 3
+4 ganz 2
+5 blau. 5
+
+Test #91
+Video: benshaar_synth_3_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 5
+3 war 5
+4 sehr 2
+5 lang. 3
+
+Test #92
+Video: nod_jimsrad_synth_5_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 2
+3 war 3
+4 nie 3
+5 grün. 0
+
+Test #93
+Video: johnsbein_synth_7_video2.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 0
+4 ganz 4
+5 blau. 4
+
+Test #94
+Video: benshaar_synth_1_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 4
+2 Haar 4
+3 war 4
+4 sehr 3
+5 lang. 0
+
+Test #95
+Video: jimsrad_synth_9_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 2
+2 Rad 2
+3 war 3
+4 nie 0
+5 grün. 0
+
+Test #96
+Video: jimsrad_synth_7_video6.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 0
+3 war 0
+4 nie 4
+5 grün. 0
+
+Test #97
+Video: benshaar_monoton_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 3
+3 war 3
+4 sehr 2
+5 lang. 2
+
+Test #98
+Video: jimsrad_synth_7_video5.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 0
+3 war 3
+4 nie 4
+5 grün. 0
+
+Test #99
+Video: benshaar_monoton_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 0
+2 Haar 3
+3 war 3
+4 sehr 2
+5 lang. 2
+
+Test #100
+Video: jimsrad_monoton_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 0
+3 war 2
+4 nie 3
+5 grün. 0
+
+Test #101
+Video: johnsbein_synth_1_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 4
+4 ganz 2
+5 blau. 2
+
+Test #102
+Video: jimsrad_synth_7_video3.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 3
+3 war 2
+4 nie 4
+5 grün. 0
+
+Test #103
+Video: jimsrad_synth_3_video2.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 2
+2 Rad 3
+3 war 2
+4 nie 0
+5 grün. 0
+
+Test #104
+Video: johnsbein_monoton_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 0
+4 ganz 0
+5 blau. 3
+
+Test #105
+Video: jimsrad_synth_7_video7.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Jims 0
+2 Rad 4
+3 war 2
+4 nie 4
+5 grün. 0
+
+Test #106
+Video: benshaar_synth_3_video9.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 3
+2 Haar 3
+3 war 5
+4 sehr 0
+5 lang. 0
+
+Test #107
+Video: benshaar_synth_2_video1.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 2
+2 Haar 4
+3 war 4
+4 sehr 2
+5 lang. 2
+
+Test #108
+Video: benshaar_synth_5_video4.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Bens 2
+2 Haar 3
+3 war 4
+4 sehr 2
+5 lang. 2
+
+Test #109
+Video: johnsbein_synth_3_video8.avi
+Face Emphasize: 0
+Voice Emphasize: 0
+1 Johns 0
+2 Bein 0
+3 war 2
+4 ganz 4
+5 blau. 2
+
