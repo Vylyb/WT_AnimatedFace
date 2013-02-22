@@ -10,10 +10,15 @@ public class Result {
 	private int voiceEmph;
 	private int faceEmph;
 	private double[] midValues;
+	private boolean nod;
 	
 	public Result() {
 		words=new Vector<String>();
 		values=new Vector<Integer>();
+	}
+	
+	public boolean isNod() {
+		return nod;
 	}
 	
 	public void setMidValues(double[] midValues) {
@@ -65,6 +70,8 @@ public class Result {
 		this.videofile = videofile;
 		voiceEmph=parseVoiceEmphasize(videofile);
 		faceEmph=parseFaceEmphasize(videofile);
+		
+		nod=videofile.startsWith("nod_");
 	}
 	
 	public String getVideofile() {
